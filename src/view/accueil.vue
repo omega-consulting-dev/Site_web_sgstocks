@@ -71,37 +71,123 @@
   </div>
 
   <!-- Section fonctionnalités -->
-  <section class="w-full flex flex-col md:flex-row h-auto bg-[#F1F3F6] px-4 md:px-10 py-8">
+  <section class="w-full flex flex-col md:flex-row bg-[#F1F3F6] px-4 md:px-10 py-8">
     <!-- Partie gauche -->
     <div class="flex-1 max-w-4xl mx-auto mb-8 md:mb-0 px-4">
-      <div class="text-center px-4">
-        <h2 class="text-[30px] md:text-[35px] font-bold text-black ">Les fonctionnalités de
+      <div class="text-center md:text-left px-4">
+        <h2 class="text-[30px] md:text-[35px] font-bold text-black mb-2">
+          Les fonctionnalités de
         </h2>
-        <h2 class=" text-[30px] md:text-[35px] font-bold text-black mb-4">notre logiciel </h2>
-        <p class="text-[15px] text-gray-700 mx-auto flex flex-block">
-        Notre logiciel a été conçu pour répondre aux besoins concrets des professionnels et des entreprises en quête d’efficacité,
-         de simplicité et de performance. Grâce à une interface intuitive et des outils puissants, il vous accompagne dans vos tâches
-         quotidiennes, optimise vos processus et vous aide à atteindre vos objectifs plus rapidement. Découvrez ci-dessous les fonctionnalités 
-         clés qui font de notre solution un véritable allié dans votre activité.
+        <h2 class="text-[30px] md:text-[35px] font-bold text-black mb-4">
+          notre logiciel
+        </h2>
+        <p class="text-[15px] text-gray-700 mb-6">
+          Notre logiciel a été conçu pour répondre aux besoins concrets des professionnels et des entreprises en quête
+          d’efficacité,
+          de simplicité et de performance. Grâce à une interface intuitive et des outils puissants, il vous accompagne
+          dans vos tâches
+          quotidiennes, optimise vos processus et vous aide à atteindre vos objectifs plus rapidement. Découvrez
+          ci-dessous les fonctionnalités
+          clés qui font de notre solution un véritable allié dans votre activité.
         </p>
-      </div>
-      <!-- les fonctionnalités  -->
-      <div class="flex gap-2 mt-5">
-        <button class="w-[25px] h-[25px] rounded-full bg-[#0736CF] text-center">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-            stroke="currentColor" class="size-5 text-white font-bold">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
-          </svg>
+        <!-- Liste de fonctionnalités -->
 
-        </button>
-        <p class="text-25px font-bold">Gestion des stocks</p>
-      </div>
+        <div class="flex gap-8">
+          <!-- fonctionnalités de gauches -->
+          <div class=" flex-1 space-y-5">
+            <!-- Fonctionnalité 1 -->
+            <div class="flex items-center gap-3">
+              <button class="w-[25px] h-[25px] rounded-full bg-[#0736CF] flex items-center justify-center">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                  stroke="currentColor" class="w-4 h-4 text-white">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
+                </svg>
+              </button>
+              <p class="text-xl font-semibold text-black/10">Gestion des stocks</p>
+            </div>
+            <!-- Fonctionnalité 2 -->
+            <div class="flex items-center gap-3">
+              <button class="w-[25px] h-[25px] rounded-full bg-[#0736CF] flex items-center justify-center">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                  stroke="currentColor" class="w-4 h-4 text-white">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
+                </svg>
+              </button>
+              <p class="text-xl font-bold">Gestion des fournisseurs</p>
+            </div>
+            <!-- Fonctionnalité 3 -->
+            <div class="flex items-center gap-3">
+              <button class="w-[25px] h-[25px] rounded-full bg-[#0736CF] flex items-center justify-center">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                  stroke="currentColor" class="w-4 h-4 text-white">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
+                </svg>
+              </button>
+              <p class="text-xl font-bold">Suivi des ventes</p>
+            </div>
+            <!-- Fonctionnalité 4 -->
+            <div class="flex items-center gap-3">
+              <button class="w-[25px] h-[25px] rounded-full bg-[#0736CF] flex items-center justify-center">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                  stroke="currentColor" class="w-4 h-4 text-white">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
+                </svg>
+              </button>
+              <p class="text-xl font-bold">Rapports analytiques</p>
+            </div>
+          </div>
+          <!-- fonctionnalités de droite -->
+          <div class="flex-1 space-y-5 ">
+            <!-- Fonctionnalité 1 -->
+            <div class="flex items-center gap-3">
+              <button class="w-[25px] h-[25px] rounded-full bg-[#0736CF] flex items-center justify-center">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                  stroke="currentColor" class="w-4 h-4 text-white">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
+                </svg>
+              </button>
+              <p class="text-xl font-bold">Gestion des stocks</p>
+            </div>
+            <!-- Fonctionnalité 2 -->
+            <div class="flex items-center gap-3">
+              <button class="w-[25px] h-[25px] rounded-full bg-[#0736CF] flex items-center justify-center">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                  stroke="currentColor" class="w-4 h-4 text-white">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
+                </svg>
+              </button>
+              <p class="text-xl font-bold">Gestion des fournisseurs</p>
+            </div>
+            <!-- Fonctionnalité 3 -->
+            <div class="flex items-center gap-3">
+              <button class="w-[25px] h-[25px] rounded-full bg-[#0736CF] flex items-center justify-center">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                  stroke="currentColor" class="w-4 h-4 text-white">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
+                </svg>
+              </button>
+              <p class="text-xl font-bold">Suivi des ventes</p>
+            </div>
+            <!-- Fonctionnalité 4 -->
+            <div class="flex items-center gap-3">
+              <button class="w-[25px] h-[25px] rounded-full bg-[#0736CF] flex items-center justify-center">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                  stroke="currentColor" class="w-4 h-4 text-white">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
+                </svg>
+              </button>
+              <p class="text-xl font-bold">Rapports analytiques</p>
+            </div>
+          </div>
 
+        </div>
+
+      </div>
     </div>
 
     <!-- Partie droite -->
     <div class="flex-1 flex justify-center items-center px-4">
-      <img src="./../assets/image/Frame.png" alt="" class="max-h-[400px] object-contain w-full" />
+      <img src="./../assets/image/Frame.png" alt="Illustration" class="max-h-[400px] w-full object-contain" />
     </div>
   </section>
   <!-- Fonctionnalités -->
