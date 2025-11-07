@@ -282,6 +282,7 @@
 
         <div class="w-full flex justify-between gap-6 ">
 
+          <!-- <Paiement v-for="(plan, index) in planDb" :key="index" :plan="plan" /> -->
           <Paiement v-for="(plan, index) in planDb" :key="index" :plan="plan" />
         </div>
 
@@ -305,10 +306,6 @@
       <div class="absolute top-0 right-0 w-1/2 h-1/2 blur-[80px] bg-[#0802B7] rounded-full"></div>
     </div>
 
-
-
-
-
   </section>
 
 </template>
@@ -317,15 +314,48 @@
 
 <script setup>
 import { ref } from 'vue'
-import Paiement from './../components/paiement.vue'
+// import Paiement from './../components/paiement.vue'
+import Paiement from './../components/paiementessaie.vue'
 
 const planDb = ref([
 
-  { 'classe': 'Demarage simple', "economie": "4 550", "pi": "19,450", "pf": "15000", 'font': 'suivre les revenus et les dépenses ' },
-  { 'classe': ' Proffesionnel', "economie": "10 000", "pi": "50,000", "pf": "40000", 'font': 'suivre les revenus et les dépenses ' },
-  { 'classe': ' Avancé', "economie": "20 000", "pi": "80,000", "pf": "60000", 'font': 'suivre les revenus et les dépenses ' }
-
-])
+  { 'classe': 'Demarage simple', "economie": "4 550", "pi": "19,450", "pf": "15000",    features: [
+      'Suivre les revenus et les dépenses',
+      'Envoyez un nombre limité de factures',
+      'Pour un seul point de vente',
+      'pour 03 utilisateur admin max',
+      'Gestion 01 magasin',
+      'Stocks, produits, services',
+      'gestion des depenses',
+      'Suivre vos statistiques',
+      '3Go d\'espace pour vos donnee'
+    ], },
+  { 'classe': 'Proffesionnel', "economie": "10 000", "pi": "50,000", "pf": "40000",   features: [
+      'Suivre les revenus et les dépenses',
+      'Envoyez un nombre illimité de factures',
+      'Pour 5 point de vente maxi',
+      'Gestion 05 magasin',
+      'pour 07 utilisateur admin max',
+      'Stocks, produits, services',
+      'Encaissement, decaissement',
+      'Gestion des emprunts',
+      'gestion des depenses'
+    ],
+    comingSoon: ['Encaissement, decaissement', 'Gestion des emprunts', 'gestion des depenses'],
+    },
+  { 'classe': ' Avancé', "economie": "20 000", "pi": "80,000", "pf": "60000",   features: [
+      'Suivre les revenus et les dépenses',
+      'Envoyez un nombre illimité de factures',
+      'Pour 15 point de vente maxi',
+      'Stocks, produits, services',
+      'Encaissement, decaissement',
+      'Gestion des emprunts',
+      'gestion des depenses',
+      'Mouvement stocks',
+      'Suivre vos statistiques'
+    ],
+    comingSoon: ['gestion des depenses', 'Mouvement stocks', 'Suivre vos statistiques'],
+    } ]);
 
 // import image5 from '@/assets/image/slide/Frame 2.png';
 // import image6 from '@/assets/image/slide/Frame 3 (1).png';

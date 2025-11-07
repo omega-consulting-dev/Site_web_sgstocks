@@ -1,25 +1,35 @@
 <template>
 
     <!-- Le wrapper avec le dégradé (agit comme bordure) -->
-    <section class=" relative bg-gradient-to-r from-[#001C80] via-[#153ABF] to-[#2B59FF] 
-                rounded-[10px] px-[2px] py-[2px]   hover:-translate-y-4 transition-all duration-500">
+    <section class=" relative bg-gradient-to-r from-[#153ABF] via-[#153ABF] to-[#2B59FF] 
+                rounded-[10px] p-[2px]  hover:-translate-y-4 transition-all duration-500">
 
         <!-- Le contenu principal (avec un petit espace pour voir le dégradé) -->
         <main class="group overflow-hidden flex flex-col gap-5 
-               w-[265px] h-[550px] font-[Poppins] bg-white 
+               w-[265px] h-fit font-[Poppins] bg-white 
                rounded-[10px]  shadow-blue-200
                hover:bg-[#000B6B] hover:text-white hover:shadow-2xl 
                hover:-translate-y-4 transition-all duration-500">
 
             <!-- entete -->
-            <div class="flex  flex-col ">
-                <!-- button classe -->
-                <button
-                    class="h-[30px] text-[15px]  mx-4 my-3 w-fit py-1 px-2 rounded-[5px] font-bold  bg-[#e6e6e6] text-[#000000d7]">
-                    {{ plan.classe }}
-                </button>
+            <div class="flex  flex-col h-full p-6">
 
-                <div class=" flex flex-col  mx-4">
+                <div class="flex flex-col gap-2 mb-4">
+                    <!-- Badge Populaire (conditionnel) -->
+                    <div v-if="plan.classe == 'Proffesionnel'" class="flex">
+                        <button class="text-[13px] px-3 py-1 rounded-[5px] font-bold bg-[#A9B2FF] text-[#000B6B]">
+                            Populaire
+                        </button>
+                    </div>
+
+                    <!-- Badge Classe -->
+                    <button class="text-[13px] w-fit px-3 py-1 rounded-[5px] font-bold bg-[#e6e6e6] text-[#000000d7]
+                                 group-hover:bg-white group-hover:text-[#000B6B] transition-colors">
+                        {{ plan.classe }}
+                    </button>
+                </div>
+
+                <div class=" flex flex-col items-center  mb-4">
 
                     <!-- message de bienvenue et  trait et prix  initial  -->
                     <div class="flex flex-col gap-5 ">
@@ -74,20 +84,42 @@
 
                 </div>
 
-
             </div>
             <!-- corps  -->
-            <main class=" flex mx-6 text-[12px] gap-2 ">
-                <div class="flex gap-2 w-fit  ">
-                    <button class="w-[21px] h-[21px] bg-black rounded-full flex justify-center ">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                            stroke="currentColor" class="w-4 h-4 text-white font-semibold">
-                            <path stroke-linecap="round" stroke-linejoin="round"
-                                d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
-                        </svg>
+            <main class=" flex flex-col justify-center items-center w-full text-[10px] gap-4 ">
+
+                <ul class="flex flex-col gap-2  w-fit ">
+                    <li v-for="(feature, idx) in plan.features" :key="idx" class="flex ">
+                        <div class="flex   gap-3 ">
+                            <button class="w-[18px] h-[18px] bg-black rounded-full hover:bg-white flex justify-center ">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor"
+                                    class="size-4  text-white text-center font-bold hover:text-black">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                                </svg>
+
+                            </button>
+                            {{ feature }}
+                        </div>
+                        <!-- Badge Coming Soon -->
+                        <span v-if="plan.comingSoon && plan.comingSoon.includes(feature)"
+                            class=" bg-[#C9FAD6] text-[#1AA703]text-[8px]  py-[2px]  px-[2px] w-fit h-fit  rounded flex-shrink-0 mx-0 right-4 ">
+                            Coming Soon
+                        </span>
+                    </li>
+                </ul>
+                <!-- Bouton -->
+                <div class="flex flex-col justify-center items-center gap-2">
+                    <button class=" bg-[#F9D783] text-[#000B6B]  rounded-[2px] w-[200px] px-3 py-[3px]
+                      font-semibold">
+                        Essaie gratuit pendant 14jours
                     </button>
-                    <h2>{{ plan.font }}</h2>
+
+                    <p class="text-center text-xs opacity-70">Cartes de credit non requis</p>
                 </div>
+
+
+
 
             </main>
         </main>
