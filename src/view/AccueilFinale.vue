@@ -245,39 +245,36 @@
         </h1>
 
         <!-- SECTION DESCRIPTION + IMAGE -->
-        <div class="flex flex-col justify-center items-center w-full lg:flex-row gap-8 lg:gap-20 mb-8 md:mb-12">
+        <div class="flex flex-col justify-center items-center w-full lg:flex-row gap-8 lg:gap-20 mb-8 md:mb-2">
 
           <!-- DESCRIPTION (Gauche sur desktop, haut sur mobile) -->
           <div class="flex justify-center items-center text-center w-full md:w-1/2 lg:text-center max-w-xl">
-            <p class="text-white text-[15px] md:text-[30px] lg:text-[20px] font-semibold leading-relaxed opacity-95">
-              Faites un suivi de votre stock, en contrôlant vos dépenses
-              et ressortez votre compte de résultat, vos charges, vos
-              produits, et votre bénéfice
-            </p>
+            <div
+              class="text-[#D7E0D1]text-[15px] md:text-[30px] lg:text-[20px] font-semibold leading-relaxed opacity-95 flex flex-col  gap-1">
+            <h1> Faites un suivi de votre stock, en contrôlant vos dépenses et
+              et ressortez votre compte de résultat,</h1>
+            <div class="flex">
+              {{ typedText }}
+              <span class="animate-pulse">|</span>
+            </div>
           </div>
 
+          </div>
         </div>
 
         <!-- CTA -->
         <div class="flex ">
           <!-- Texte du lien à gauche -->
-          <div class="flex justify-center items-center  w-full text-center md:text-center text-blue-600">
+          <div class="flex justify-center items-center  w-full text-center md:text-center text-[#D7E0D1]">
 
-            <a href="#" class="group flex-col gap-1 justify-center animate-bounce">
-              <p class="font-bold text-xl md:text-2xl mb-2 group-hover:underline">
-                Cliquez pour suivre le lien
-              </p>
-              <div class="font-bold text-xl md:text-2xl flex items-center justify-center md:justify-start gap-2">
-                <p
-                  class="group-hover:underline font-bold text-xl md:text-2xl flex items-center justify-center md:justify-start gap-2">
-                  pour la phase test</p>
-                <span class="text-3xl md:text-4xl ">✨👌</span>
-              </div>
+            <a href="#" class=" font-poppins">
+              <button
+                class=" px-8 py-2 text-blue-500  bg-white rounded-[7px] font-semibold hover:text-white hover:bg-[#5067DA] hover:rounded-full duration-500 ">
+                DEMONSTRATION
+              </button>
+
             </a>
-
           </div>
-
-
           <div class="hidden md:flex items-center justify-end mb-4  text-left ">
             <img src="@/assets/image/interface.png" alt="Aperçu des interfaces"
               class="w-[150px] h-[150px] translate-y-6" />
@@ -316,67 +313,65 @@
       <!-- Contenu principal -->
       <div class="grid md:grid-cols-2 md:gap-12 gap-8 justify-center items-center mb-8">
 
-        <!-- Partie Gauche - Texte -->
-        <div class="flex-1 flex-col ">
+<!-- Partie Gauche - Texte -->
+<div class="flex-1 flex-col">
 
-          <!-- Introduction -->
-          <div
-            class="bg-white/5 rounded-2xl p-8 border  border-white/10 hover:border-[#0FDBD0]/50 transition-all duration-300">
-            <h3 class="text-3xl font-bold mb-4 flex items-center gap-3">
-              <span class="text-[#0FDBD0]">👋</span>Qui Sommes Nous ?
-            </h3>
-            <div class="flex flex-col gap-4 text-lg leading-relaxed">
-              <p>
-                <span class="text-[#0FDBD0] font-semibold">SG-STOCK</span> est une solution ERP complète et innovante
-                conçue pour optimiser la gestion globale de votre entreprise.
-              </p>
-              <p>
-                Notre plateforme 3-en-1 combine intelligemment la gestion des stocks, la comptabilité avancée et
-                l'analyse statistique de vos ventes en temps réel. Développée avec les technologies les plus récentes,
-                SG-STOCK s'adapte aux besoins spécifiques des PME et commerces en quête de performance.
-              </p>
-              <p>
-                Transformez vos données en décisions stratégiques et propulsez votre activité vers de nouveaux sommets.
-              </p>
-            </div>
-          </div>
+  <!-- Introduction -->
+  <div class=" reveal bg-white/5 rounded-2xl p-8 border border-white/10 hover:border-[#0FDBD0]/50 transition-all duration-300">
+    <h3 class="text-3xl font-bold mb-4 flex items-center gap-3">
+      <span class="text-[#0FDBD0]">👋</span>Qui Sommes Nous ?
+    </h3>
+    <div class="flex flex-col gap-4 text-lg leading-relaxed">
+      <p>
+        <span class="text-[#0FDBD0] font-semibold">SG-STOCK</span> est une solution ERP complète et innovante
+        conçue pour optimiser la gestion globale de votre entreprise.
+      </p>
+      <p>
+        Notre plateforme 3-en-1 combine intelligemment la gestion des stocks, la comptabilité avancée et
+        l'analyse statistique de vos ventes en temps réel. Développée avec les technologies les plus récentes,
+        SG-STOCK s'adapte aux besoins spécifiques des PME et commerces en quête de performance.
+      </p>
+      <p>
+        Transformez vos données en décisions stratégiques et propulsez votre activité vers de nouveaux sommets.
+      </p>
+    </div>
+  </div>
 
-          <div
-            class="mt-3  bg-gradient-to-br from-[#0FDBD0]/10 to-transparent backdrop-blur-sm rounded-2xl p-8 border border-[#0FDBD0]/30 hover:border-[#0FDBD0]/60 transition-all duration-300">
-            <h3 class="text-2xl font-bold text-white mb-4 flex items-center gap-3">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                stroke="currentColor" class="w-7 h-7 text-[#0FDBD0]">
-                <path stroke-linecap="round" stroke-linejoin="round"
-                  d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456ZM16.894 20.567 16.5 21.75l-.394-1.183a2.25 2.25 0 0 0-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 0 0 1.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 0 0 1.423 1.423l1.183.394-1.183.394a2.25 2.25 0 0 0-1.423 1.423Z" />
-              </svg>
-              Pourquoi nous choisir
-            </h3>
-            <div class="flex flex-col gap-4 text-[16px] leading-relaxed">
-              <p>
-                <span class="text-[#0FDBD0] font-semibold">SG-STOCK</span> se distingue par son approche tout-en-un qui
-                élimine le besoin de jongler entre plusieurs logiciels coûteux. Notre interface intuitive permet une
-                prise en main rapide, réduisant le temps de formation de vos équipes.
-              </p>
-              <p>
-                Avec plus de 12 modules interconnectés, vous disposez d'une vision à 360° de votre activité : gestion
-                des stocks, ventes, facturation, clients, fournisseurs, et bien plus encore.
-              </p>
-              <p>
-                Notre tableau de bord intelligent transforme vos données en insights exploitables pour des décisions
-                éclairées en temps réel. La sécurité de vos données est garantie avec des sauvegardes automatiques et un
-                hébergement sécurisé.
-              </p>
-              <p>
-                Choisir SG-STOCK, c'est investir dans la croissance durable et l'efficacité opérationnelle de votre
-                entreprise.
-              </p>
-            </div>
-          </div>
-        </div>
+  <div class=" reveal mt-3 bg-gradient-to-br from-[#0FDBD0]/10 to-transparent backdrop-blur-sm rounded-2xl p-8 border border-[#0FDBD0]/30 hover:border-[#0FDBD0]/60 transition-all duration-300">
+    <h3 class="text-2xl font-bold text-white mb-4 flex items-center gap-3">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+        stroke="currentColor" class="w-7 h-7 text-[#0FDBD0]">
+        <path stroke-linecap="round" stroke-linejoin="round"
+          d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456ZM16.894 20.567 16.5 21.75l-.394-1.183a2.25 2.25 0 0 0-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 0 0 1.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 0 0 1.423 1.423l1.183.394-1.183.394a2.25 2.25 0 0 0-1.423 1.423Z" />
+      </svg>
+      Pourquoi nous choisir
+    </h3>
+    <div class="flex flex-col gap-4 text-[16px] leading-relaxed">
+      <p>
+        <span class="text-[#0FDBD0] font-semibold">SG-STOCK</span> se distingue par son approche tout-en-un qui
+        élimine le besoin de jongler entre plusieurs logiciels coûteux. Notre interface intuitive permet une
+        prise en main rapide, réduisant le temps de formation de vos équipes.
+      </p>
+      <p>
+        Avec plus de 12 modules interconnectés, vous disposez d'une vision à 360° de votre activité : gestion
+        des stocks, ventes, facturation, clients, fournisseurs, et bien plus encore.
+      </p>
+      <p>
+        Notre tableau de bord intelligent transforme vos données en insights exploitables pour des décisions
+        éclairées en temps réel. La sécurité de vos données est garantie avec des sauvegardes automatiques et un
+        hébergement sécurisé.
+      </p>
+      <p>
+        Choisir SG-STOCK, c'est investir dans la croissance durable et l'efficacité opérationnelle de votre
+        entreprise.
+      </p>
+    </div>
+  </div>
+</div>
 
         <!-- Nos fonctionnalites -->
         <div
-          class=" flex-1 bg-white/5   backdrop-blur-sm rounded-2xl gap-3  p-8 border border-white/10 hover:border-[#0FDBD0]/50 transition-all duration-300">
+          class="reveal flex-1 bg-white/5   backdrop-blur-sm rounded-2xl gap-3  p-8 border border-white/10 hover:border-[#0FDBD0]/50 transition-all duration-300">
           <h3 class="text-2xl font-bold text-white mb-4 flex justify-center w-full items-center gap-3 mb-3">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
               stroke="currentColor" class="w-7 h-7 text-[#0FDBD0]">
@@ -387,7 +382,7 @@
           </h3>
           <ul class="space-y-3  gap-4 grid md:grid-cols-2 ">
             <li v-for="(fonct, index) in fonctionnalites" :key="index" :fonct="fonct"
-              class="flex items-center gap-4 text-[16px]">
+              class="reveal flex items-center gap-4 text-[16px]">
               <!-- <span class="text-[#0FDBD0] text-xl mt-1">✓</span> -->
               <button class="w-[30px] h-[30px] rounded-full bg-[#0736CF] flex items-center justify-center">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
@@ -396,12 +391,12 @@
                 </svg>
               </button>
               <span class="text-[20px]  font-semibold t">{{ fonct }}</span>
-            </li>
-
+            </li>    
+            <!-- reveal pour faire l'effet qui apparait et disparait -->
 
 
             <li v-for="(fonct, index) in fonctionnalites1" :key="index" :fonct="fonct"
-              class="flex items-center gap-4 text-[16px]">
+              class="reveal flex items-center gap-4 text-[16px]">
               <!-- <span class="text-[#0FDBD0] text-xl mt-1">✓</span> -->
               <button class="w-[30px] h-[30px] rounded-full bg-[#0736CF] flex items-center justify-center">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
@@ -443,7 +438,7 @@
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-15 max-w-6xl mx-auto">
 
         <!-- Fonctionnalité 1 -->
-        <div class="flex flex-col items-center h-full">
+        <div class=" reveal-left flex flex-col items-center h-full">
           <div class="w-full h-[200px] flex items-center justify-center mb-5">
             <img src="./../assets/image/Group.png" alt="Suivi de stock" class="max-w-full h-auto">
           </div>
@@ -457,7 +452,7 @@
         </div>
 
         <!-- Fonctionnalité 2 -->
-        <div class="flex flex-col items-center h-full">
+        <div class=" reveal-top flex flex-col items-center h-full">
           <div class="w-full h-[200px] flex items-center justify-center mb-5">
             <img src="./../assets/image/Group (1).png" alt="Professionnalisme" class="max-w-full h-auto">
           </div>
@@ -471,7 +466,7 @@
         </div>
 
         <!-- Fonctionnalité 3 -->
-        <div class="flex flex-col items-center h-full">
+        <div class=" reveal-right flex flex-col items-center h-full">
           <div class="w-full h-[200px] flex items-center justify-center mb-5">
             <img src="./../assets/image/Group (2).png" alt="Centralisation" class="max-w-full h-auto">
           </div>
@@ -586,7 +581,7 @@
     </section>
   </footer>
   <!-- Section info bleue -->
-  <section class="w-full bg-gray-100 text-black py-12">
+  <section class="w-full  text-black py-12 bg-gradient-to-br from-indigo-800 via-indigo-800 to-purple-900 text-white">
     <div class="max-w-7xl mx-auto px-4">
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8  text-center">
         <!-- Phone -->
@@ -756,6 +751,10 @@ import { reactive } from 'vue';
 
 const mobileMenuOpen = ref(false)
 const userMenuOpen = ref(false)
+// Toggle du menu utilisateur
+const toggleUserMenu = () => {
+  userMenuOpen.value = !userMenuOpen.value
+}
 
 // État de connexion (à remplacer par votre logique d'authentification)
 const isConnected = ref(false) // L'utilisateur n'est pas connecté au départ
@@ -811,10 +810,7 @@ const fonctionnalites1 = ref([
 ])
 
 
-// Toggle du menu utilisateur
-const toggleUserMenu = () => {
-  userMenuOpen.value = !userMenuOpen.value
-}
+
 
 // Fermer le menu si on clique ailleurs
 const handleClickOutside = (event) => {
@@ -848,21 +844,16 @@ const handleLogout = () => {
   mobileMenuOpen.value = false
   userMenuOpen.value = false
 }
-
-// Ajouter l'écouteur de clic au montage du composant
-onMounted(() => {
-  document.addEventListener('click', handleClickOutside)
-})
-
-// Retirer l'écouteur avant de détruire le composant
-onBeforeUnmount(() => {
-  document.removeEventListener('click', handleClickOutside)
-})
-
 const haloRef = ref(null);
 let vantaEffect = null;
-
 onMounted(() => {
+  // Ajouter l'écouteur de clic au montage du composant
+
+  document.addEventListener('click', handleClickOutside)
+  autoplayLoop = setInterval(() => {
+    carousel.value.goNext()
+  }, 1500)
+  animateTyping();
   // Vérifie que VANTA est chargé
   if (window.VANTA) {
     vantaEffect = window.VANTA.HALO({
@@ -877,11 +868,83 @@ onMounted(() => {
       size: 1.7,
     });
   }
+   const revealElements = document.querySelectorAll(".reveal");
+
+let staggerCounter = 0; // permet un vrai ordre 1 → 2 → 3 → ...
+
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        // délai progressif contrôlé
+        entry.target.style.transitionDelay = `${staggerCounter * 500}ms`;
+
+        entry.target.classList.add("reveal-active");
+
+        staggerCounter++; // le suivant attend un peu plus
+        observer.unobserve(entry.target);
+      }
+    });
+  },
+  { threshold: 0.15 }
+);
+
+revealElements.forEach((el) => observer.observe(el));
+  const els = document.querySelectorAll(".reveal-left, .reveal-top, .reveal-right");
+
+  const observers = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        entry.target.style.transitionDelay = `${i * 200}ms`; // 0ms / 200ms / 400ms
+        entry.target.classList.add("reveal-active");
+        observers.unobserve(entry.target);
+      }
+    });
+  });
+
+  els.forEach(el => {
+    el.classList.add("reveal"); // ajoute l'état initial
+    observer.observe(el);
+  });
 });
 
+
+
 onBeforeUnmount(() => {
+  clearInterval(autoplayLoop)
+  // Retirer l'écouteur avant de détruire le composant
+  document.removeEventListener('click', handleClickOutside)
   if (vantaEffect) vantaEffect.destroy(); // Nettoyage
-});
+})
+// Animation du texte
+const typedText = ref('');
+const fullText = " vos charges, vos    produits, et votre bénéfice"
+let typingInterval = null;
+let restartTimeout = null;
+// Fonction pour animer le texte lettre par lettre EN BOUCLE
+function animateTyping() {
+  // Nettoyer les anciens timers
+  if (typingInterval) clearInterval(typingInterval);
+  if (restartTimeout) clearTimeout(restartTimeout);
+
+  typedText.value = '';
+  let index = 0;
+  const typingSpeed = 100;
+
+  typingInterval = setInterval(() => {
+    if (index < fullText.length) {
+      typedText.value = fullText.substring(0, index + 1);
+      index++;
+    } else {
+      clearInterval(typingInterval);
+      // Recommencer après 2 secondes
+      restartTimeout = setTimeout(() => {
+        animateTyping();
+      }, 1000);
+    }
+  }, typingSpeed);
+}
+
 
 
 const form = reactive({
@@ -932,15 +995,7 @@ const mesImages = ref([
 const carousel = ref(null)
 let autoplayLoop = null
 
-onMounted(() => {
-  autoplayLoop = setInterval(() => {
-    carousel.value.goNext()
-  }, 1500)
-})
 
-onBeforeUnmount(() => {
-  clearInterval(autoplayLoop)
-})
 
 
 </script>
@@ -966,4 +1021,42 @@ onBeforeUnmount(() => {
   background: rgba(176, 27, 27, 0.6);
   transform: scale(1.15);
 }
+</style>
+<style>
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease-out;
+}
+
+.reveal-active {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal {
+  opacity: 0;
+  transition: 0.8s ease;
+}
+
+/* Gauche */
+.reveal-left {
+  transform: translateX(-60px);
+}
+
+/* Haut */
+.reveal-top {
+  transform: translateY(-60px);
+}
+
+/* Droite */
+.reveal-right {
+  transform: translateX(60px);
+}
+
+/* Quand l'élément devient visible */
+.reveal-active {
+  opacity: 1;
+  transform: translateX(0) translateY(0);
+}
+
 </style>
