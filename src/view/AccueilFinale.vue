@@ -1,17 +1,17 @@
 <template>
 
   <!-- Entete de la page -->
-<div class="w-full h-[350px] md:h-screen relative overflow-hidden">
+  <div class="w-full h-[380px] md:h-screen relative overflow-hidden ">
 
-  <img src="./../assets/image/headersgstock.png"
-       class="absolute inset-0 w-full h-full object-cover object-center z-0" />
+    <img src="./../assets/image/headersgstock.png"
+      class="absolute inset-0 w-full h-full object-cover object-center z-0" />
 
-  <div class="absolute inset-0 bg-black/30 z-10"></div>
+    <div class="absolute inset-0 bg-black/30 z-10"></div>
 
-  <header id="accueil" class="relative z-50 text-white">
-    
-    <!-- NAV -->
-    <nav class="w-full px-4 md:px-6 lg:px-10 py-3 bg-white text-gray-800">
+    <header id="accueil" class="relative z-50 text-white">
+
+      <!-- NAV -->
+      <nav class="w-full px-4 md:px-6 lg:px-10 py-3 bg-gray-50 text-gray-800">
 
         <div class="flex justify-between items-center">
 
@@ -62,9 +62,8 @@
                 </svg>
 
                 <!-- User Name or Guest -->
-                <span class="text-sm font-medium">Se Connecter</span>    </RouterLink>
-
-
+                <span class="text-sm font-medium">Se Connecter</span>
+              </RouterLink>
 
 
               <!-- User Dropdown Menu -->
@@ -124,10 +123,10 @@
           leave-from-class="opacity-100 translate-x-0" leave-to-class="opacity-0 -translate-x-full">
           <div v-if="mobileMenuOpen" class="md:hidden fixed inset-0 z-50">
             <!-- Overlay -->
-            <div @click="mobileMenuOpen = false" class="absolute inset-0 bg-black/60 backdrop-blur-sm"></div>
+            <div @click="mobileMenuOpen = false" class="absolute inset-0 bg-black/60 backdrop-blur-sm "></div>
 
             <!-- Sidebar Menu -->
-            <div class="absolute left-0 top-0 h-full w-72 bg-[#1a1548] shadow-2xl text-white">
+            <div class="absolute left-0 top-0 h-full w-72 bg-[#1a1548] shadow-2xl text-white z-60">
               <!-- Header avec fermeture -->
               <div class="flex justify-between items-center p-6 border-b border-white/10">
                 <h2 class="text-xl font-bold">Menu</h2>
@@ -229,11 +228,10 @@
       <div class="relative z-30 container mt-8 mx-auto pt-1 px-4 md:px-6 lg:px-8  md:pt-15 pb-12">
 
         <!-- TITRE PRINCIPAL -->
-        <h1
-          class="text-center  text-white font-extrabold text-[30px] md:text-[50px] lg:text-[60px]  mb-4 md:mb-6 leading-tight">
+        <h1 class="text-center  text-white font-extrabold text-[20px] md:text-[50px] lg:text-[60px]  mb-2 md:mb-6 ">
           Simplifiez votre comptabilité
           <br class="hidden sm:block" />
-          <span class="block mt-2">avec SG-STOCK</span>
+          <span class="block">avec SG-STOCK</span>
         </h1>
 
         <!-- SECTION DESCRIPTION + IMAGE -->
@@ -242,7 +240,7 @@
           <!-- DESCRIPTION (Gauche sur desktop, haut sur mobile) -->
           <div class="flex justify-center items-center text-center w-full md:w-1/2 lg:text-center max-w-xl">
             <div
-              class="text-[#D7E0D1]text-[15px] md:text-[30px] lg:text-[20px] font-semibold leading-relaxed opacity-95 flex flex-col  gap-1">
+              class="text-[#D7E0D1] text-[15px] md:text-[30px] lg:text-[20px] font-semibold leading-relaxed opacity-95 flex flex-col  gap-1">
               <h1> Faites un suivi de votre stock, en contrôlant vos dépenses et
                 et ressortez votre compte de résultat,</h1>
               <div class="flex">
@@ -253,20 +251,66 @@
 
           </div>
         </div>
-        
+
 
         <!-- CTA -->
         <div class="flex ">
           <!-- Texte du lien à gauche -->
           <div class="flex justify-center items-center  w-full text-center md:text-center text-[#D7E0D1]">
 
-            <a href="#" class=" font-poppins">
-              <button
-                class=" px-8 py-2 text-blue-500  bg-white rounded-[7px] font-semibold hover:text-white hover:bg-[#5067DA] hover:rounded-full duration-500 ">
-                DEMONSTRATION
-              </button>
+            <RouterLink to="/connexion"
+              class=" px-8 py-2 text-blue-500  bg-white rounded-[7px] font-semibold hover:text-white hover:bg-[#5067DA] hover:rounded-full duration-500 ">
+              DEMONSTRATION
 
-            </a>
+            </RouterLink>
+
+            <!-- BANNIÈRE FLOTTANTE - Milieu droite en bleu -->
+            <!-- BANNIÈRE FLOTTANTE - Milieu droite en bleu -->
+            <Transition name="middle-right-slide">
+              <div v-if="isVisibleBanner" :key="'floating-banner-' + currentBannerIndex"
+                class="fixed top-2/3  md:top-1/2 -translate-y-1/2 left-4 right-0 sm:left-auto sm:right-4 md:right-6 z-50 p-5 sm:p-5 md:p-6 w-[200px] sm:w-[360px] md:w-96 max-h-[80vh] overflow-y-auto rounded-2xl shadow-2xl transition-all cursor-pointer transform origin-center bg-blue-900/90 hover:scale-[1.02]">
+                <RouterLink :to="currentBanner.to" class="block">
+                  <div class="text-white relative">
+                    <!-- En-tête avec icône -->
+                    <div class="flex items-start mb-4 space-x-3 pr-8">
+                      <!-- SVG caché sur mobile, visible sur tablette et desktop -->
+                      <svg xmlns="http://www.w3.org/2000/svg" class="hidden md:block h-8 w-8 flex-shrink-0 mt-1"
+                        fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                          d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                      </svg>
+
+                      <h3 class="text-lg sm:text-xl md:text-2xl font-bold leading-tight">
+                        {{ currentBanner.text }}
+                      </h3>
+                    </div>
+
+                    <!-- Description -->
+                    <p class="text-sm sm:text-[15px] md:text-base opacity-90 mb-3 md:mb-4 md:ml-11 leading-snug">
+                      {{ currentBanner.description }}
+                    </p>
+
+                    <!-- Bouton d'action -->
+                    <div class="text-right md:ml-11">
+                      <span
+                        class="inline-block px-4 sm:px-5 py-2 text-sm sm:text-base font-bold bg-white text-[#5067DA] rounded-full shadow-lg hover:bg-gray-100 transition duration-200 transform hover:scale-105">
+                        {{ currentBanner.action }}
+                      </span>
+                    </div>
+
+                    <!-- Bouton fermer -->
+                    <button @click.prevent="closeBanner"
+                      class="absolute -top-2  -right-1 md:-right-2 bg-white text-[#5067DA] rounded-full p-1.5 hover:bg-gray-100 transition shadow-md">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd"
+                          d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                          clip-rule="evenodd" />
+                      </svg>
+                    </button>
+                  </div>
+                </RouterLink>
+              </div>
+            </Transition>
           </div>
           <div class="hidden md:flex items-center justify-end mb-4  text-left ">
             <img src="@/assets/image/interface.png" alt="Aperçu des interfaces"
@@ -280,129 +324,218 @@
   </div>
 
   <!-- Slider images -->
-  <div class=" -mt-15  -mb-15 relative z-60">
-    <div class="carousel-full">
-      <Carousel3d ref="carousel" :controls-visible="true" :controls-prev-html="'&#10092;'"
-        :controls-next-html="'&#10093;'" :controls-width="30" :controls-height="160" :clickable="true" :space="160"
-        :display="16" :width="400" :height="360" :border="0" :perspective="50" :inverse-scaling="3">
+ <div class="w-full px-4 sm:px-0 sm:w-3/4 md:w-2/3 mx-auto">
+    <div class="carousel-full w-full overflow-hidden">
+      <Carousel3d 
+        ref="carousel" 
+        :controls-visible="true" 
+        :controls-prev-html="'&#10092;'"
+        :controls-next-html="'&#10093;'" 
+        :controls-width="controlsWidth" 
+        :controls-height="controlsHeight" 
+        :clickable="true" 
+        :space="carouselSpace"
+        :display="carouselDisplay" 
+        :width="carouselWidth" 
+        :height="carouselHeight" 
+        :border="0" 
+        :perspective="50" 
+        :inverse-scaling="inverseScaling"
+      >
         <Slide v-for="(img, i) in mesImages" :key="i" :index="i">
-          <img :src="img" class="carousel-img" />
+          <img :src="img" class="carousel-img w-full h-full object-cover rounded-lg" />
         </Slide>
       </Carousel3d>
     </div>
   </div>
-  <!-- Section À Propos -->
-  <section id="Apropos" class="min-h-screen bg-gray-800  py-20 px-6 text-white">
+<!-- Section À Propos -->
+
+  <section id="Apropos" class="min-h-screen bg-gray-800 py-12 md:py-20 px-4 md:px-6 text-white">
     <div class="max-w-7xl mx-auto">
 
       <!-- Titre de la section -->
-      <div class="text-center mb-10">
-        <h2 class="text-5xl md:text-6xl font-bold  mb-4">
+      <div class="text-left ml-2 mb-5 md:mb-10">
+        <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
           À Propos de <span class="text-[#0FDBD0]">Nous</span>
         </h2>
-        <div class="w-24 h-1 bg-[#0FDBD0] mx-auto rounded-full"></div>
+        <div class="w-16 md:w-24 h-1 bg-[#0FDBD0] mx-auto rounded-full"></div>
       </div>
 
       <!-- Contenu principal -->
-      <div class="grid md:grid-cols-2 md:gap-12 gap-8 justify-center items-center mb-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 lg:gap-12 mb-8">
 
         <!-- Partie Gauche - Texte -->
-        <div class="flex-1 flex-col">
+        <div class="flex flex-col gap-4 md:gap-6">
 
           <!-- Introduction -->
-          <div
-            class=" reveal bg-white/5 rounded-2xl p-8 border border-white/10 hover:border-[#0FDBD0]/50 transition-all duration-300">
-            <h3 class="text-3xl font-bold mb-4 flex items-center gap-3">
-              <span class="text-[#0FDBD0]">👋</span>Qui Sommes Nous ?
+          <div class="reveal bg-white/5 rounded-xl md:rounded-2xl p-6 md:p-8 border border-white/10 hover:border-[#0FDBD0]/50 transition-all duration-300">
+            <h3 class="text-xl sm:text-2xl md:text-3xl font-bold mb-3 md:mb-4 flex items-center gap-2 md:gap-3">
+              <span class="text-[#0FDBD0] text-2xl md:text-3xl">👋</span>
+              <span>Qui Sommes Nous ?</span>
             </h3>
-            <div class="flex flex-col gap-4 text-lg leading-relaxed">
+            <div class="flex flex-col justify-items-center align-center  pr-2 gap-3 md:gap-4 text-sm sm:text-base md:text-lg leading-relaxed">
               <p>
                 <span class="text-[#0FDBD0] font-semibold">SG-STOCK</span> est une solution ERP complète et innovante
                 conçue pour optimiser la gestion globale de votre entreprise.
               </p>
-              <p>
+              
+              <!-- Paragraphes visibles uniquement sur desktop ou si expanded -->
+              <p :class="{ 'hidden md:block': !showMoreIntro }">
                 Notre plateforme 3-en-1 combine intelligemment la gestion des stocks, la comptabilité avancée et
                 l'analyse statistique de vos ventes en temps réel. Développée avec les technologies les plus récentes,
                 SG-STOCK s'adapte aux besoins spécifiques des PME et commerces en quête de performance.
               </p>
-              <p>
+              <p :class="{ 'hidden md:block': !showMoreIntro }">
                 Transformez vos données en décisions stratégiques et propulsez votre activité vers de nouveaux sommets.
               </p>
             </div>
+            
+            <!-- Bouton "Voir plus" visible uniquement sur mobile -->
+            <button 
+              @click="showMoreIntro = !showMoreIntro"
+              class="md:hidden mt-4 text-[#0FDBD0] font-semibold text-sm flex items-center gap-2 hover:gap-3 transition-all"
+            >
+              {{ showMoreIntro ? 'Voir moins' : 'Voir plus' }}
+              <svg 
+                xmlns="http://www.w3.org/2000/svg" 
+                fill="none" 
+                viewBox="0 0 24 24" 
+                stroke-width="2" 
+                stroke="currentColor" 
+                class="w-4 h-4 transition-transform"
+                :class="{ 'rotate-180': showMoreIntro }"
+              >
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+              </svg>
+            </button>
           </div>
 
-          <div
-            class=" reveal mt-3 bg-gradient-to-br from-[#0FDBD0]/10 to-transparent backdrop-blur-sm rounded-2xl p-8 border border-[#0FDBD0]/30 hover:border-[#0FDBD0]/60 transition-all duration-300">
-            <h3 class="text-2xl font-bold text-white mb-4 flex items-center gap-3">
+          <!-- Pourquoi nous choisir -->
+          <div class="reveal bg-gradient-to-br from-[#0FDBD0]/10 to-transparent backdrop-blur-sm rounded-xl md:rounded-2xl p-6 md:p-8 border border-[#0FDBD0]/30 hover:border-[#0FDBD0]/60 transition-all duration-300">
+            <h3 class="text-xl sm:text-2xl font-bold text-white mb-3 md:mb-4 flex items-center gap-2 md:gap-3">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                stroke="currentColor" class="w-7 h-7 text-[#0FDBD0]">
+                stroke="currentColor" class="w-6 h-6 md:w-7 md:h-7 text-[#0FDBD0] flex-shrink-0">
                 <path stroke-linecap="round" stroke-linejoin="round"
                   d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456ZM16.894 20.567 16.5 21.75l-.394-1.183a2.25 2.25 0 0 0-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 0 0 1.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 0 0 1.423 1.423l1.183.394-1.183.394a2.25 2.25 0 0 0-1.423 1.423Z" />
               </svg>
               Pourquoi nous choisir
             </h3>
-            <div class="flex flex-col gap-4 text-[16px] leading-relaxed">
+            <div class="flex flex-col gap-3 md:gap-4 text-sm sm:text-base leading-relaxed">
               <p>
                 <span class="text-[#0FDBD0] font-semibold">SG-STOCK</span> se distingue par son approche tout-en-un qui
                 élimine le besoin de jongler entre plusieurs logiciels coûteux. Notre interface intuitive permet une
                 prise en main rapide, réduisant le temps de formation de vos équipes.
               </p>
-              <p>
+              
+              <!-- Paragraphes visibles uniquement sur desktop ou si expanded -->
+                <p :class="{ 'hidden md:block': !showMoreWhy }">
+               Notre interface intuitive permet une
+                prise en main rapide, réduisant le temps de formation de vos équipes.
+              </p>
+              <p :class="{ 'hidden md:block': !showMoreWhy }">
                 Avec plus de 12 modules interconnectés, vous disposez d'une vision à 360° de votre activité : gestion
                 des stocks, ventes, facturation, clients, fournisseurs, et bien plus encore.
               </p>
-              <p>
+              <p :class="{ 'hidden md:block': !showMoreWhy }">
                 Notre tableau de bord intelligent transforme vos données en insights exploitables pour des décisions
                 éclairées en temps réel. La sécurité de vos données est garantie avec des sauvegardes automatiques et un
                 hébergement sécurisé.
               </p>
-              <p>
+              <p :class="{ 'hidden md:block': !showMoreWhy }">
                 Choisir SG-STOCK, c'est investir dans la croissance durable et l'efficacité opérationnelle de votre
                 entreprise.
               </p>
             </div>
+            
+            <!-- Bouton "Voir plus" visible uniquement sur mobile -->
+            <button 
+              @click="showMoreWhy = !showMoreWhy"
+              class="md:hidden mt-4 text-[#0FDBD0] font-semibold text-sm flex items-center gap-2 hover:gap-3 transition-all"
+            >
+              {{ showMoreWhy ? 'Voir moins' : 'Voir plus' }}
+              <svg 
+                xmlns="http://www.w3.org/2000/svg" 
+                fill="none" 
+                viewBox="0 0 24 24" 
+                stroke-width="2" 
+                stroke="currentColor" 
+                class="w-4 h-4 transition-transform"
+                :class="{ 'rotate-180': showMoreWhy }"
+              >
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+              </svg>
+            </button>
           </div>
         </div>
 
-        <!-- Nos fonctionnalites -->
-        <div
-          class="reveal flex-1 bg-white/5   backdrop-blur-sm rounded-2xl gap-3  p-8 border border-white/10 hover:border-[#0FDBD0]/50 transition-all duration-300">
-          <h3 class="text-2xl font-bold text-white mb-4 flex justify-center w-full items-center gap-3 mb-3">
+        <!-- Nos fonctionnalités -->
+        <div class="reveal bg-white/5 backdrop-blur-sm rounded-xl md:rounded-2xl p-6 md:p-8 border border-white/10 hover:border-[#0FDBD0]/50 transition-all duration-300">
+          <h3 class="text-xl sm:text-2xl font-bold text-white mb-6 md:mb-8 flex justify-center items-center gap-2 md:gap-3">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-              stroke="currentColor" class="w-7 h-7 text-[#0FDBD0]">
+              stroke="currentColor" class="w-6 h-6 md:w-7 md:h-7 text-[#0FDBD0] flex-shrink-0">
               <path stroke-linecap="round" stroke-linejoin="round"
                 d="M17.25 6.75 22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3-4.5 16.5" />
             </svg>
             Nos Fonctionnalités
           </h3>
-          <ul class="space-y-3  gap-4 grid md:grid-cols-2 ">
-            <li v-for="(fonct, index) in fonctionnalites" :key="index" :fonct="fonct"
-              class="reveal flex items-center gap-4 text-[16px]">
-              <!-- <span class="text-[#0FDBD0] text-xl mt-1">✓</span> -->
-              <button class="w-[30px] h-[30px] rounded-full bg-[#0736CF] flex items-center justify-center">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                  stroke="currentColor" class="w-5 h-5  text-white">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
-                </svg>
-              </button>
-              <span class="text-[20px]  font-semibold t">{{ fonct }}</span>
-            </li>
-            <!-- reveal pour faire l'effet qui apparait et disparait -->
+          
+          <!-- Liste des fonctionnalités -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4">
+            <!-- Première colonne -->
+            <div class="space-y-3 md:space-y-4">
+              <div 
+                v-for="(fonct, index) in fonctionnalites" 
+                :key="'fonct1-' + index"
+                v-show="showMoreFeatures || index < 1"
+                class="reveal flex items-center gap-3 md:gap-4"
+              >
+                <button class="w-7 h-7 md:w-8 md:h-8 rounded-full bg-[#0736CF] flex items-center justify-center flex-shrink-0">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="w-4 h-4 md:w-5 md:h-5 text-white">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
+                  </svg>
+                </button>
+                <span class="text-sm sm:text-base md:text-lg font-semibold">{{ fonct }}</span>
+              </div>
+            </div>
 
-
-            <li v-for="(fonct, index) in fonctionnalites1" :key="index" :fonct="fonct"
-              class="reveal flex items-center gap-4 text-[16px]">
-              <!-- <span class="text-[#0FDBD0] text-xl mt-1">✓</span> -->
-              <button class="w-[30px] h-[30px] rounded-full bg-[#0736CF] flex items-center justify-center">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                  stroke="currentColor" class="w-5 h-5 text-white">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
-                </svg>
-              </button>
-              <span class="text-[20px]  font-semibold t">{{ fonct }}</span>
-            </li>
-
-          </ul>
+            <!-- Deuxième colonne -->
+            <div class="space-y-3 md:space-y-4">
+              <div 
+                v-for="(fonct, index) in fonctionnalites1" 
+                :key="'fonct2-' + index"
+                v-show="showMoreFeatures || index < 5"
+                class="reveal flex items-center gap-3 md:gap-4"
+              >
+                <button class="w-7 h-7 md:w-8 md:h-8 rounded-full bg-[#0736CF] flex items-center justify-center flex-shrink-0">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="w-4 h-4 md:w-5 md:h-5 text-white">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
+                  </svg>
+                </button>
+                <span class="text-sm sm:text-base md:text-lg font-semibold">{{ fonct }}</span>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Bouton "Voir plus" pour les fonctionnalités (visible sur tous les écrans) -->
+          <button 
+            @click="showMoreFeatures = !showMoreFeatures"
+            class="mt-6 w-full text-[#0FDBD0] font-semibold text-sm flex items-center justify-center gap-2 hover:gap-3 transition-all"
+          >
+            {{ showMoreFeatures ? 'Voir moins' : 'Voir toutes les fonctionnalités' }}
+            <svg 
+              xmlns="http://www.w3.org/2000/svg" 
+              fill="none" 
+              viewBox="0 0 24 24" 
+              stroke-width="2" 
+              stroke="currentColor" 
+              class="w-4 h-4 transition-transform"
+              :class="{ 'rotate-180': showMoreFeatures }"
+            >
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+            </svg>
+          </button>
         </div>
 
       </div>
@@ -410,22 +543,20 @@
     </div>
   </section>
 
-
-
   <!-- Image fonctionnalités -->
 
   <section class="bg-white flex justify-center items-center  flex-col gap-3 font-[Poppins] mt-8">
-    <div class="max-w-4xl md:mx-auto text-center  gap-1 mx-1">
-      <h2 class="text-xl md:text-2xl font-bold mb-1 text-black">
+    <div class="max-w-3xl md:mx-auto text-center  gap-1 px-3">
+      <h2 class="text-[15px] md:text-2xl font-bold mb-1 text-black">
         Voici trois critères convaincants qui pourraient vous
       </h2>
-      <h2 class="text-xl md:text-2xl font-bold mb-1 text-black"> inciter vous grande entreprise ou petite
+      <h2 class="text-[15px] md:text-2xl font-bold mb-1 text-black"> inciter vous grande entreprise ou petite
         commerçants à
       </h2>
-      <h2 class="text-xl md:text-2xl font-bold mb-1 text-black">adopter notre logiciel de gestion comptable, de
+      <h2 class="text-[15px] md:text-2xl font-bold mb-1 text-black">adopter notre logiciel de gestion comptable, de
         stock et
       </h2>
-      <h2 class="text-xl md:text-2xl font-bold mb-1 text-black"> commercial en 3 en 1</h2>
+      <h2 class="text-[15px] md:text-2xl font-bold mb-1 text-black"> commercial en 3 en 1</h2>
     </div>
 
 
@@ -568,9 +699,11 @@
         </RouterLink>
         <!-- Lien -->
         <p class="text-center text-blue-600 font-medium mt-6">
-          <a href="#" class="hover:underline inline-flex items-center gap-1">
+          <RouterLink to="/connexion" class="hover:underline inline-flex items-center gap-1">
             Cliquez pour Suivre le lien pour la phase test 👍👌
-          </a>
+            >
+          </RouterLink>
+
         </p>
       </form>
     </section>
@@ -738,27 +871,43 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onBeforeUnmount } from 'vue'
+import { ref, onMounted, onBeforeUnmount, onUnmounted, computed } from 'vue'
 import Paiement from './../components/paiementessaie.vue'
 import personne from '@/components/personne.vue';
 import { reactive } from 'vue';
-
+import { RouterLink } from 'vue-router'
+import { Carousel3d, Slide } from 'vue3-carousel-3d'
 
 const mobileMenuOpen = ref(false)
 const userMenuOpen = ref(false)
+const userMenuRef = ref(null) // ⚠️ AJOUTÉ : manquait dans votre code
+
 // Toggle du menu utilisateur
 const toggleUserMenu = () => {
   userMenuOpen.value = !userMenuOpen.value
 }
 
-// État de connexion (à remplacer par votre logique d'authentification)
-const isConnected = ref(false) // L'utilisateur n'est pas connecté au départ
+// État de connexion
+const isConnected = ref(false)
 const userName = ref('invite')
 const userEmail = ref('invite@sgstock.com')
-const planDb = ref([
 
+// Variables pour les animations (IMPORTANT: déclarer AVANT onMounted)
+let observer = null
+let observers = null
+
+// États pour afficher/masquer le texte
+const showMoreIntro = ref(false);
+const showMoreWhy = ref(false);
+const showMoreFeatures = ref(false);
+
+const planDb = ref([
   {
-    'classe': 'Demarage simple', "economie": "4 550", "pi": "19,450", "pf": "15000", features: [
+    'classe': 'Demarage simple',
+    "economie": "4 550",
+    "pi": "19,450",
+    "pf": "15000",
+    features: [
       'Suivre les revenus et les dépenses',
       'Envoyez un nombre limité de factures',
       'Pour un seul point de vente',
@@ -771,7 +920,11 @@ const planDb = ref([
     ],
   },
   {
-    'classe': 'Proffesionnel', "economie": "10 000", "pi": "50,000", "pf": "40000", features: [
+    'classe': 'Proffesionnel',
+    "economie": "10 000",
+    "pi": "50,000",
+    "pf": "40000",
+    features: [
       'Suivre les revenus et les dépenses',
       'Envoyez un nombre illimité de factures',
       'Pour 5 point de vente maxi',
@@ -785,7 +938,11 @@ const planDb = ref([
     comingSoon: ['Encaissement, decaissement', 'Gestion des emprunts', 'gestion des depenses'],
   },
   {
-    'classe': ' Avancé', "economie": "20 000", "pi": "80,000", "pf": "60000", features: [
+    'classe': ' Avancé',
+    "economie": "20 000",
+    "pi": "80,000",
+    "pf": "60000",
+    features: [
       'Suivre les revenus et les dépenses',
       'Envoyez un nombre illimité de factures',
       'Pour 15 point de vente maxi',
@@ -797,15 +954,32 @@ const planDb = ref([
       'Suivre vos statistiques'
     ],
     comingSoon: ['gestion des depenses', 'Mouvement stocks', 'Suivre vos statistiques'],
-  }]);
-const fonctionnalites = ref([
-  'Gestion de stock muti-magasins', 'Gestion des Ventes', 'Gestion des produit et catalogue', 'Facturation', 'Gestion de la Caisse', 'Tableau de board Analytique', ' Gestions des Emprunts', ' Gestion Dépenses', 'Gestion des encaissements'])
-const fonctionnalites1 = ref([
-  'Gestion des fournisseurs', 'Gestion des Clients', 'Gestion des services et catalogue de service', 'Enregistrement des mouvements', 'Bilan de résultat', 'Gestion Collaborateur', 'Gestion des permissions Granulaires', 'Tableau de bord analytique', 'Gestion des decaissemnts'
+  }
 ])
 
+const fonctionnalites = ref([
+  'Gestion de stock muti-magasins',
+  'Gestion des Ventes',
+  'Gestion des produit et catalogue',
+  'Facturation',
+  'Gestion de la Caisse',
+  'Tableau de board Analytique',
+  'Gestions des Emprunts',
+  'Gestion Dépenses',
+  'Gestion des encaissements'
+])
 
-
+const fonctionnalites1 = ref([
+  'Gestion des fournisseurs',
+  'Gestion des Clients',
+  'Gestion des services et catalogue de service',
+  'Enregistrement des mouvements',
+  'Bilan de résultat',
+  'Gestion Collaborateur',
+  'Gestion des permissions Granulaires',
+  'Tableau de bord analytique',
+  'Gestion des decaissemnts'
+])
 
 // Fermer le menu si on clique ailleurs
 const handleClickOutside = (event) => {
@@ -816,17 +990,12 @@ const handleClickOutside = (event) => {
 
 // Connexion
 const handleLogin = () => {
-  // Simuler la connexion (remplacez par votre vraie logique)
   isConnected.value = true
   userName.value = 'Charly'
   userEmail.value = 'charly@sgstock.com'
-
   console.log('Connexion réussie')
   mobileMenuOpen.value = false
   userMenuOpen.value = false
-
-  // Redirection vers la page de connexion si nécessaire
-  // window.location.href = '/login'
 }
 
 // Déconnexion
@@ -834,113 +1003,106 @@ const handleLogout = () => {
   isConnected.value = false
   userName.value = ''
   userEmail.value = ''
-
   console.log('Déconnexion réussie')
   mobileMenuOpen.value = false
   userMenuOpen.value = false
 }
-// const haloRef = ref(null);
-// let vantaEffect = null;
+
+// État de visibilité de la bannière
+const isVisibleBanner = ref(false)
+const currentBannerIndex = ref(0)
+
+// Messages à afficher
+const banners = ref([
+  {
+    text: "Essayez SG-Stock gratuitement !",
+    description: "Découvrez toutes les fonctionnalités sans engagement",
+    action: "Démarrer maintenant",
+    to: "/connexion"
+  },
+  {
+    text: "Gérez votre stock facilement",
+    description: "Un outil puissant pour votre entreprise",
+    action: "Voir la démo",
+    to: "/connexion"
+  },
+  {
+    text: "Rejoignez +500 entreprises",
+    description: "Ils nous font déjà confiance",
+    action: "Inscription gratuite",
+    to: "/connexion"
+  }
+])
+
+// Bannière actuelle
+const currentBanner = ref(banners.value[0])
+
+let bannerInterval = null
+
+// Afficher la bannière après 3 secondes
 onMounted(() => {
-  // Ajouter l'écouteur de clic au montage du composant
+  setTimeout(() => {
+    isVisibleBanner.value = true
+  }, 3000)
 
-  document.addEventListener('click', handleClickOutside)
-  autoplayLoop = setInterval(() => {
-    carousel.value.goNext()
-  }, 1500)
-  animateTyping();
-  // Vérifie que VANTA est chargé
-  // if (window.VANTA) {
-  //   vantaEffect = window.VANTA.HALO({
-  //     el: haloRef.value,
-  //     mouseControls: true,
-  //     touchControls: true,
-  //     gyroControls: false,
-  //     minHeight: 200.0,
-  //     minWidth: 200.0,
-  //     //  baseColor: 0x1bdb,
-  //     backgroundColor: 0x43659,
-  //     size: 1.7,
-  //   });
-  // }
-  const revealElements = document.querySelectorAll(".reveal");
+  // Changer de bannière toutes les 8 secondes
+  bannerInterval = setInterval(() => {
+    isVisibleBanner.value = false
 
-  let staggerCounter = 0; // permet un vrai ordre 1 → 2 → 3 → ...
-
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          // délai progressif contrôlé
-          entry.target.style.transitionDelay = `${staggerCounter * 100}ms`;
-
-          entry.target.classList.add("reveal-active");
-
-          staggerCounter++; // le suivant attend un peu plus
-          observer.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.15 }
-  );
-
-  revealElements.forEach((el) => observer.observe(el));
-  const els = document.querySelectorAll(".reveal-left, .reveal-top, .reveal-right");
-
-  const observers = new IntersectionObserver((entries) => {
-    entries.forEach((entry, i) => {
-      if (entry.isIntersecting) {
-        entry.target.style.transitionDelay = `${i * 50}ms`; // 0ms / 200ms / 400ms
-        entry.target.classList.add("reveal-active");
-        observers.unobserve(entry.target);
-      }
-    });
-  });
-
-  els.forEach(el => {
-    el.classList.add("reveal"); // ajoute l'état initial
-    observer.observe(el);
-  });
-});
-
-
-
-onBeforeUnmount(() => {
-  clearInterval(autoplayLoop)
-  // Retirer l'écouteur avant de détruire le composant
-  document.removeEventListener('click', handleClickOutside)
-  if (vantaEffect) vantaEffect.destroy(); // Nettoyage
+    setTimeout(() => {
+      currentBannerIndex.value = (currentBannerIndex.value + 1) % banners.value.length
+      currentBanner.value = banners.value[currentBannerIndex.value]
+      isVisibleBanner.value = true
+    }, 300)
+  }, 8000)
 })
+
+// Fermer la bannière
+const closeBanner = () => {
+  isVisibleBanner.value = false
+}
+
+// Nettoyage
+onBeforeUnmount(() => {
+  if (bannerInterval) {
+    clearInterval(bannerInterval)
+  }
+})
+
+
+// ✅ CORRECTION : Déclarer vantaEffect au bon endroit
+// const haloRef = ref(null)
+let vantaEffect = null
+
 // Animation du texte
-const typedText = ref('');
+const typedText = ref('')
 const fullText = " vos charges, vos    produits, et votre bénéfice"
-let typingInterval = null;
-let restartTimeout = null;
+let typingInterval = null
+let restartTimeout = null
+
 // Fonction pour animer le texte lettre par lettre EN BOUCLE
 function animateTyping() {
   // Nettoyer les anciens timers
-  if (typingInterval) clearInterval(typingInterval);
-  if (restartTimeout) clearTimeout(restartTimeout);
+  if (typingInterval) clearInterval(typingInterval)
+  if (restartTimeout) clearTimeout(restartTimeout)
 
-  typedText.value = '';
-  let index = 0;
-  const typingSpeed = 100;
+  typedText.value = ''
+  let index = 0
+  const typingSpeed = 100
 
   typingInterval = setInterval(() => {
     if (index < fullText.length) {
-      typedText.value = fullText.substring(0, index + 1);
-      index++;
+      typedText.value = fullText.substring(0, index + 1)
+      index++
     } else {
-      clearInterval(typingInterval);
-      // Recommencer après 2 secondes
+      clearInterval(typingInterval)
+      // Recommencer après 1 seconde
       restartTimeout = setTimeout(() => {
-        animateTyping();
-      }, 1000);
+        animateTyping()
+      }, 1000)
     }
-  }, typingSpeed);
+  }, typingSpeed)
 }
-
-
 
 const form = reactive({
   firstName: '',
@@ -948,21 +1110,19 @@ const form = reactive({
   email: '',
   phone: '',
   message: '',
-});
+})
 
 function submitForm() {
-  // Vous pouvez traiter ici les données du formulaire
-  alert(`Message envoyé par ${form.firstName} ${form.lastName}`);
-  // Réinitialiser le formulaire si nécessaire
-  form.firstName = '';
-  form.lastName = '';
-  form.email = '';
-  form.phone = '';
-  form.message = '';
+  alert(`Message envoyé par ${form.firstName} ${form.lastName}`)
+  // Réinitialiser le formulaire
+  form.firstName = ''
+  form.lastName = ''
+  form.email = ''
+  form.phone = ''
+  form.message = ''
 }
 
-import { Carousel3d, Slide } from 'vue3-carousel-3d'
-// Tableau de 20+ images 
+// Carousel
 const mesImages = ref([
   "src/assets/image/slides1/dashbord.svg",
   "src/assets/image/slides1/client.svg",
@@ -982,17 +1142,185 @@ const mesImages = ref([
   "src/assets/image/slides1/paiement.svg",
   "src/assets/image/slides1/proccessu.svg",
   "src/assets/image/slides1/bilan.svg",
-
-
-
 ])
+ //État pour la largeur de l'écran
+const windowWidth = ref(0);
 
-const carousel = ref(null)
-let autoplayLoop = null
+// Fonction pour mettre à jour la largeur
+const updateWidth = () => {
+  if (typeof window !== 'undefined') {
+    windowWidth.value = window.innerWidth;
+  }
+};
+
+// Propriétés responsive calculées
+const carouselWidth = computed(() => {
+  if (windowWidth.value === 0) return 400;       // Valeur par défaut avant mount
+  if (windowWidth.value < 640) return 200;       // Mobile: 200px réduit
+  if (windowWidth.value < 768) return 300;       // Tablette: 300px
+  return 400;                                     // Desktop: ORIGINAL 400px
+});
+
+const carouselHeight = computed(() => {
+  if (windowWidth.value === 0) return 360;       // Valeur par défaut avant mount
+  if (windowWidth.value < 640) return 180;       // Mobile: 180px réduit
+  if (windowWidth.value < 768) return 270;       // Tablette: 270px
+  return 360;                                     // Desktop: ORIGINAL 360px
+});
+
+const carouselSpace = computed(() => {
+  if (windowWidth.value === 0) return 160;       // Valeur par défaut avant mount
+  if (windowWidth.value < 640) return 100;       // Mobile: 100px réduit
+  if (windowWidth.value < 768) return 130;       // Tablette: 130px
+  return 160;                                     // Desktop: ORIGINAL 160px
+});
+
+const carouselDisplay = computed(() => {
+  if (windowWidth.value === 0) return 16;        // Valeur par défaut avant mount
+  if (windowWidth.value < 640) return 5;         // Mobile: 5 slides
+  if (windowWidth.value < 768) return 9;         // Tablette: 9 slides
+  return 16;                                      // Desktop: ORIGINAL 16 slides
+});
+
+const controlsWidth = computed(() => {
+  if (windowWidth.value === 0) return 30;        // Valeur par défaut avant mount
+  if (windowWidth.value < 640) return 20;        // Mobile: 20px réduit
+  if (windowWidth.value < 768) return 25;        // Tablette: 25px
+  return 30;                                      // Desktop: ORIGINAL 30px
+});
+
+const controlsHeight = computed(() => {
+  if (windowWidth.value === 0) return 160;       // Valeur par défaut avant mount
+  if (windowWidth.value < 640) return 100;       // Mobile: 100px réduit
+  if (windowWidth.value < 768) return 130;       // Tablette: 130px
+  return 160;                                     // Desktop: ORIGINAL 160px
+});
+
+const inverseScaling = computed(() => {
+  if (windowWidth.value === 0) return 3;         // Valeur par défaut avant mount
+  if (windowWidth.value < 640) return 200;       // Mobile: scaling prononcé
+  if (windowWidth.value < 768) return 100;       // Tablette
+  return 3;                                       // Desktop: ORIGINAL 3
+});
+
+// Lifecycle hooks
+onMounted(() => {
+  // Initialiser la largeur au montage
+  updateWidth();
+  // Écouter les changements de taille
+  window.addEventListener('resize', updateWidth);
+});
+
+onUnmounted(() => {
+  if (typeof window !== 'undefined') {
+    window.removeEventListener('resize', updateWidth);
+  }
+});
+
+
+onMounted(() => {
+  try {
+    // Ajouter l'écouteur de clic
+    document.addEventListener('click', handleClickOutside)
 
 
 
+    // Animation typing
+    animateTyping()
 
+ 
+    // Animations reveal
+    const revealElements = document.querySelectorAll(".reveal")
+    let staggerCounter = 0
+
+    observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.style.transitionDelay = `${staggerCounter * 100}ms`
+            entry.target.classList.add("reveal-active")
+            staggerCounter++
+            observer.unobserve(entry.target)
+          }
+        })
+      },
+      { threshold: 0.15 }
+    )
+
+    revealElements.forEach((el) => observer.observe(el))
+
+    // Deuxième observer pour les autres animations
+    const els = document.querySelectorAll(".reveal-left, .reveal-top, .reveal-right")
+
+    observers = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          entry.target.style.transitionDelay = `${i * 50}ms`
+          entry.target.classList.add("reveal-active")
+          observers.unobserve(entry.target)
+        }
+      })
+    })
+
+    els.forEach(el => {
+      el.classList.add("reveal")
+      observers.observe(el)
+    })
+
+  } catch (error) {
+    console.error('Erreur dans onMounted:', error)
+  }
+})
+
+// ✅ CORRECTION COMPLÈTE du onBeforeUnmount
+onBeforeUnmount(() => {
+  try {
+    // Nettoyer le carousel autoplay
+    if (autoplayLoop) {
+      clearInterval(autoplayLoop)
+      autoplayLoop = null
+    }
+
+    // Nettoyer les timers d'animation typing
+    if (typingInterval) {
+      clearInterval(typingInterval)
+      typingInterval = null
+    }
+
+    if (restartTimeout) {
+      clearTimeout(restartTimeout)
+      restartTimeout = null
+    }
+
+    // Nettoyer les event listeners
+    document.removeEventListener('click', handleClickOutside)
+
+    // Nettoyer VANTA effect
+    if (vantaEffect) {
+      vantaEffect.destroy()
+      vantaEffect = null
+    }
+
+    // Nettoyer les observers
+    if (observer) {
+      observer.disconnect()
+      observer = null
+    }
+
+    if (observers) {
+      observers.disconnect()
+      observers = null
+    }
+
+    // Nettoyer les refs
+    if (carousel.value) {
+      carousel.value = null
+    }
+
+  } catch (error) {
+    console.error('Erreur dans onBeforeUnmount:', error)
+  }
+})
 </script>
 <style scoped>
 .carousel-full {
@@ -1003,65 +1331,91 @@ let autoplayLoop = null
 
 }
 
-
-
 .carousel-img {
   width: 120%;
   height: 120%;
   border-radius: 15px;
   display: block;
-filter: drop-shadow(0 10px 15px rgba(158, 151, 114, 0.707));
+  filter: drop-shadow(0 10px 15px rgba(158, 151, 114, 0.707));
 }
 
 .carousel-3d-slide {
-  background: transparent !important; /* enlève toute couleur */
-  box-shadow: none !important;       /* enlève les ombres éventuelles */
-    border-radius:15px;
-      padding-bottom: 25px !important;
+  background: transparent !important;
+  /* enlève toute couleur */
+  box-shadow: none !important;
+  /* enlève les ombres éventuelles */
+  border-radius: 15px;
+  padding-bottom: 25px !important;
 }
 
 
 
 :deep(.carousel-3d-controls:hover) {
- 
+
   transform: scale(1.15);
 }
 </style>
+<style scoped>
+/* ANIMATION DEPUIS LA DROITE - MILIEU DE PAGE */
+.middle-right-slide-enter-active,
+.middle-right-slide-leave-active {
+  transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.middle-right-slide-enter-from {
+  opacity: 0;
+  transform: translate(150px, 0) scale(0.4);
+}
+
+.middle-right-slide-leave-to {
+  opacity: 0;
+  transform: translate(100px, 20px) scale(0.6);
+}
+
+.middle-right-slide-enter-to,
+.middle-right-slide-leave-from {
+  opacity: 1;
+  transform: translate(0, 0) scale(1);
+}
+
+/* Animation de pulsation pour attirer l'attention */
+@keyframes pulse-glow {
+
+  0%,
+  100% {
+    box-shadow: 0 10px 30px rgba(80, 103, 218, 0.3);
+  }
+
+  50% {
+    box-shadow: 0 10px 40px rgba(80, 103, 218, 0.5);
+  }
+}
+
+.middle-right-slide-enter-to {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+</style>
 <style>
+/* Animation reveal - CORRIGÉE pour afficher le texte */
 .reveal {
   opacity: 0;
   transform: translateY(40px);
   transition: all 0.8s ease-out;
+  /* IMPORTANT: Le texte sera visible une fois l'animation activée */
 }
 
 .reveal-active {
-  opacity: 1;
+  opacity: 1 !important;
   transform: translateY(0);
 }
 
+/* Alternative: Si vous n'utilisez pas l'animation reveal, commentez le CSS ci-dessus */
+/* et décommentez celui-ci pour afficher directement le contenu */
+
+/*
 .reveal {
-  opacity: 0;
-  transition: 0.8s ease;
-}
-
-/* Gauche */
-.reveal-left {
-  transform: translateX(-60px);
-}
-
-/* Haut */
-.reveal-top {
-  transform: translateY(-60px);
-}
-
-/* Droite */
-.reveal-right {
-  transform: translateX(60px);
-}
-
-/* Quand l'élément devient visible */
-.reveal-active {
   opacity: 1;
-  transform: translateX(0) translateY(0);
+  transform: translateY(0);
 }
+*/
 </style>

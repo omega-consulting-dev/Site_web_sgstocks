@@ -4,6 +4,7 @@
      ======================================== -->
 
 <template>
+    <RouterView/>
     <BaseFormLayout :steps="stepsConfig"    route="/" @submit="precedentAccueil">
         <FormCard title="Vos Compte SG-STOCK" description="Grace a l’authentification,  je rentre dans un                     
               environnement securisé." 

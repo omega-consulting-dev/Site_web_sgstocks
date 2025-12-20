@@ -1,9 +1,8 @@
 <template>
   <!-- En-tête -->
   <!-- HEADER PRINCIPAL -->
-  <header class=" group relative w-full min-h-screen md:min-h-[600px] lg:min-h-[700px] overflow-hidden  font-[Poppins]">
-
-    <!-- Fond dégradé -->
+  <header class=" group relative w-full min-h-screen md:min-h-[600px] lg:min-h-[700px] overflow-hidden  font-[Poppins bg-gradient-to-r from-white to-transparent">
+      <!-- Fond dégradé -->
     <div class="absolute inset-0 bg-gradient-to-br from-[#77C1EB] via-[#9B7EC4] to-[#dfb49fec]"></div>
 
     <!-- Overlay transparent (optionnel pour plus de profondeur) -->
