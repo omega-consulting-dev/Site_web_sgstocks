@@ -486,7 +486,7 @@
               <div 
                 v-for="(fonct, index) in fonctionnalites" 
                 :key="'fonct1-' + index"
-                v-show="showMoreFeatures || index < 1"
+                v-show="showMoreFeatures || index < 2"
                 class="reveal flex items-center gap-3 md:gap-4"
               >
                 <button class="w-7 h-7 md:w-8 md:h-8 rounded-full bg-[#0736CF] flex items-center justify-center flex-shrink-0">
@@ -504,7 +504,7 @@
               <div 
                 v-for="(fonct, index) in fonctionnalites1" 
                 :key="'fonct2-' + index"
-                v-show="showMoreFeatures || index < 5"
+                v-show="showMoreFeatures || index < 2"
                 class="reveal flex items-center gap-3 md:gap-4"
               >
                 <button class="w-7 h-7 md:w-8 md:h-8 rounded-full bg-[#0736CF] flex items-center justify-center flex-shrink-0">
@@ -571,7 +571,7 @@
           <h2 class="text-base md:text-lg font-bold text-black text-center mb-4">
             Suivi de stock en temps réel
           </h2>
-          <p class="text-[16px] md:text-base text-gray-700 text-center">
+          <p class="text-[13px] md:text-base text-gray-700 text-center">
             Alertes automatiques, tableaux de bord dynamiques, et génération de rapports instantanés pour une prise de
             décision rapide et éclairée.
           </p>
@@ -585,7 +585,7 @@
           <h2 class="text-base md:text-lg font-bold text-black text-center mb-4">
             Image professionnelle
           </h2>
-          <p class="text-[16px] md:text-base text-gray-700 text-center">
+          <p class="text-[13px] md:text-base text-gray-700 text-center">
             Une image plus professionnelle (factures conformes, suivi client structuré), une meilleure organisation, et
             des données fiables pour convaincre partenaires ou investisseurs.
           </p>
@@ -599,7 +599,7 @@
           <h2 class="text-base md:text-lg font-bold text-black text-center mb-4">
             Centralisation des opérations
           </h2>
-          <p class="text-[16px]md:text-base text-gray-700 text-center">
+          <p class="text-[13px] md:text-base text-gray-700 text-center">
             Une seule plateforme pour gérer la comptabilité, le stock et les ventes, ce qui réduit les erreurs, les
             doublons et les pertes de données.
           </p>
@@ -610,15 +610,15 @@
   </section>
 
   <section id="tarifs"
-    class="  overflow-y-hidden  w-full h-fit bg-gradient-to-br from-indigo-800 via-purple-800 to-purple-900  flex justify-center items-center  pt-10 md:h-[900px]  font-[Poppins] ">
+    class="  overflow-y-hidden  w-full h-fit bg-gradient-to-br from-indigo-800 via-purple-800 to-purple-900  flex justify-center items-center pt-5 md:pt-10 md:h-[900px]  font-[Poppins] ">
 
-    <div class="w-full flex flex-col gap-10 lex justify-center items-center ">
+    <div class="w-full flex flex-col gap-5 md:gap-10 lex justify-center items-center ">
 
-      <div class="flex flex-col justify-center items-center fixed-50 mb-2 mt-7 md:mt-9 lg:md-12">
+      <div class="flex flex-col justify-center items-center fixed-50 mb-1  md:mt-9 lg:md-12">
         <h2
-          class="w-full text-2xl md:text-[35px]  text-center flex  justify-center font-bold  text-white  mb-1 mt-7 md:mt-9 lg:md-15   ">
+          class="w-full text-2xl md:text-[35px]  text-center flex  justify-center font-bold  text-white  mb-1 md:mt-9 lg:md-15   ">
           Nos Differents Plan</h2>
-        <img src="./../assets/image/trait.png" alt="" class="w-[320px] h-8">
+        <img src="./../assets/image/trait.png" alt="" class=" w-[220px] md:w-[320px] h-8">
       </div>
 
       <div class="flex flex-col  justify-center items-center w-full">
