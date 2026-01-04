@@ -1,0 +1,375 @@
+{
+  "greetings": {
+    "messages": [
+      {
+        "time": "morning",
+        "emoji": "☀️",
+        "title": "Bonjour",
+        "subtitle": "Excellente journée ! Comment puis-je vous aider à optimiser votre gestion de stock aujourd'hui ?"
+      },
+      {
+        "time": "afternoon",
+        "emoji": "👋",
+        "title": "Bon après-midi",
+        "subtitle": "Ravi de vous accueillir ! Que puis-je faire pour faciliter votre activité commerciale ?"
+      },
+      {
+        "time": "evening",
+        "emoji": "🌙",
+        "title": "Bonsoir",
+        "subtitle": "Content de vous voir ! Comment puis-je vous assister ce soir ?"
+      },
+      {
+        "time": "default",
+        "emoji": "👋",
+        "title": "Bienvenue sur SG-Stock",
+        "subtitle": "Votre assistant intelligent pour la gestion de stock. Je suis là pour répondre à toutes vos questions !"
+      }
+    ],
+    "followUp": [
+      "💡 Astuce : Tapez simplement votre question ou choisissez une catégorie ci-dessous",
+      "🎯 Je peux vous aider avec la connexion, les packs, la facturation et bien plus !",
+      "⚡ Réponse instantanée garantie - Posez-moi votre question !"
+    ]
+  },
+  "quickSuggestions": [
+    {
+      "id": "conn_problem",
+      "icon": "🔐",
+      "title": "Je n'arrive pas à me connecter",
+      "category": "connexion",
+      "keywords": ["connexion", "login", "mot de passe", "accès", "compte bloqué"]
+    },
+    {
+      "id": "choose_pack",
+      "icon": "📦",
+      "title": "Quel pack choisir pour mon entreprise ?",
+      "category": "packs",
+      "keywords": ["pack", "abonnement", "choisir", "tarif", "prix"]
+    },
+    {
+      "id": "payment_issue",
+      "icon": "💳",
+      "title": "Problème de paiement ou facturation",
+      "category": "paiements",
+      "keywords": ["paiement", "facture", "échec", "mobile money"]
+    },
+    {
+      "id": "how_to_use",
+      "icon": "❓",
+      "title": "Comment utiliser SG-Stock ?",
+      "category": "utilisation",
+      "keywords": ["aide", "utilisation", "comment", "tutoriel"]
+    },
+    {
+      "id": "add_product",
+      "icon": "📦",
+      "title": "Comment ajouter des produits ?",
+      "category": "stock",
+      "keywords": ["produit", "ajouter", "stock", "inventaire"]
+    },
+    {
+      "id": "contact_support",
+      "icon": "🎧",
+      "title": "Parler à un conseiller humain",
+      "category": "support",
+      "keywords": ["support", "aide", "conseiller", "assistance"]
+    }
+  ],
+  "categories": {
+    "packs": {
+      "name": "Packs et Abonnements",
+      "icon": "📦",
+      "description": "Découvrez nos offres adaptées à votre entreprise",
+      "color": "purple",
+      "responses": {
+        "compare_packs": {
+          "title": "Nos 3 Packs SG-Stock 🎯",
+          "intro": "Choisissez le pack adapté à la taille de votre entreprise. Tous nos packs incluent :",
+          "commonFeatures": [
+            "✅ Essai gratuit de 14 jours (sans carte bancaire)",
+            "✅ Gestion complète des stocks et produits",
+            "✅ Création de factures illimitées",
+            "✅ Suivi des revenus et dépenses en temps réel",
+            "✅ Support client par email et téléphone",
+            "✅ Mises à jour automatiques gratuites",
+            "✅ Sauvegardes quotidiennes de vos données",
+            "✅ Application web responsive (PC, tablette, mobile)"
+          ],
+          "packs": [
+            {
+              "name": "Pack Démarrage Simple",
+              "price": "15 000 FCFA/mois",
+              "oldPrice": "19 450 FCFA",
+              "savings": "Économisez 23%",
+              "badge": "Idéal pour débuter",
+              "color": "orange",
+              "description": "Parfait pour les petites boutiques et commerces de proximité qui démarrent leur digitalisation.",
+              "limits": {
+                "pointsDeVente": "1 point de vente maximum",
+                "utilisateurs": "3 utilisateurs administrateurs",
+                "stockage": "1 Go de stockage",
+                "factures": "Illimitées"
+              },
+              "features": [
+                "📍 Gestion d'un seul point de vente",
+                "👥 Jusqu'à 3 utilisateurs avec accès complet",
+                "📦 Gestion illimitée de produits",
+                "💰 Suivi des ventes et encaissements",
+                "📊 Rapports de base (ventes, stocks)",
+                "🔔 Alertes de stock faible",
+                "📱 Accès mobile et desktop",
+                "💾 1 Go de stockage pour vos données"
+              ],
+              "bestFor": [
+                "Petites boutiques (alimentation, cosmétiques)",
+                "Commerces de quartier",
+                "Points de vente uniques",
+                "Micro-entreprises (1-5 employés)"
+              ],
+              "notIncluded": [
+                "❌ Multi-points de vente",
+                "❌ Gestion des emprunts",
+                "❌ Rapports avancés",
+                "❌ API d'intégration"
+              ]
+            },
+            {
+              "name": "Pack Professionnel",
+              "price": "40 000 FCFA/mois",
+              "oldPrice": "50 000 FCFA",
+              "savings": "Économisez 20%",
+              "badge": "⭐ Le plus populaire",
+              "color": "blue",
+              "description": "Notre offre la plus demandée ! Idéale pour les entreprises en croissance avec plusieurs points de vente.",
+              "limits": {
+                "pointsDeVente": "5 points de vente maximum",
+                "utilisateurs": "7 utilisateurs administrateurs",
+                "stockage": "10 Go de stockage",
+                "factures": "Illimitées"
+              },
+              "features": [
+                "📍 Gestion de 5 points de vente simultanément",
+                "👥 Jusqu'à 7 utilisateurs avec rôles personnalisés",
+                "📦 Gestion avancée des stocks (transferts, inventaires)",
+                "💰 Encaissements et décaissements détaillés",
+                "📊 Rapports avancés et tableaux de bord",
+                "🔔 Alertes intelligentes (stock, ventes, anomalies)",
+                "🏦 Gestion des fournisseurs et clients",
+                "💳 Suivi des paiements (espèces, mobile money, crédit)",
+                "📈 Statistiques de performance par point de vente",
+                "🔄 Synchronisation en temps réel entre points de vente",
+                "📱 Application mobile dédiée",
+                "💾 10 Go de stockage cloud sécurisé",
+                "🎓 Formation gratuite de l'équipe (2 heures)"
+              ],
+              "bestFor": [
+                "Chaînes de boutiques (2-5 points de vente)",
+                "Supérettes et moyennes surfaces",
+                "Grossistes et semi-grossistes",
+                "Entreprises de 5-20 employés",
+                "Pharmacies et parapharmacies"
+              ],
+              "advantages": [
+                "🎯 Centralisation de tous vos points de vente",
+                "📊 Vision globale de votre activité",
+                "⚡ Gagnez 10h/semaine sur la gestion",
+                "💡 Décisions basées sur des données réelles"
+              ],
+              "comingSoon": [
+                "🔜 Gestion des emprunts (disponible bientôt)",
+                "🔜 Module de comptabilité avancée"
+              ]
+            },
+            {
+              "name": "Pack Avancé",
+              "price": "60 000 FCFA/mois",
+              "oldPrice": "80 000 FCFA",
+              "savings": "Économisez 25%",
+              "badge": "🚀 Pour les grandes entreprises",
+              "color": "green",
+              "description": "Solution complète pour les grandes entreprises avec de multiples points de vente et besoins avancés.",
+              "limits": {
+                "pointsDeVente": "15 points de vente maximum",
+                "utilisateurs": "15 utilisateurs administrateurs",
+                "stockage": "50 Go de stockage",
+                "factures": "Illimitées"
+              },
+              "features": [
+                "📍 Gestion de 15 points de vente simultanément",
+                "👥 Jusqu'à 15 utilisateurs avec permissions granulaires",
+                "📦 Gestion complète des stocks (multi-entrepôts)",
+                "💰 Comptabilité complète (revenus, dépenses, bilans)",
+                "📊 Suite complète de rapports et analytics",
+                "🔔 Système d'alertes intelligent et prédictif",
+                "🏦 Gestion avancée fournisseurs et clients",
+                "💳 Tous modes de paiement (cash, mobile money, virements, chèques)",
+                "📈 Business Intelligence et prévisions de ventes",
+                "🔄 Synchronisation instantanée multi-sites",
+                "🔐 Sécurité renforcée (2FA, logs d'audit)",
+                "📱 Applications mobiles iOS et Android",
+                "💾 50 Go de stockage cloud sécurisé",
+                "🎓 Formation complète de l'équipe (1 journée)",
+                "👨‍💼 Account Manager dédié",
+                "⚙️ API d'intégration avec vos outils",
+                "🔧 Support prioritaire (réponse sous 1h)",
+                "💼 Gestion des emprunts et crédits",
+                "📦 Mouvements de stocks avancés",
+                "🧾 Génération automatique de rapports comptables"
+              ],
+              "bestFor": [
+                "Grandes chaînes (6-15 points de vente)",
+                "Supermarchés et hypermarchés",
+                "Grossistes et distributeurs",
+                "Entreprises de 20+ employés",
+                "Franchises et réseaux"
+              ],
+              "advantages": [
+                "🎯 Contrôle total de votre empire commercial",
+                "📊 Prise de décision stratégique data-driven",
+                "⚡ Automatisation maximale = gain de 20h/semaine",
+                "💰 ROI mesuré : économisez jusqu'à 30% sur les coûts de gestion",
+                "🔮 Prévisions de ventes basées sur l'IA",
+                "🛡️ Sécurité bancaire pour vos données"
+              ],
+              "included": [
+                "✅ Tout du Pack Professionnel +",
+                "✅ Gestion des emprunts et crédits clients",
+                "✅ Module de comptabilité complète",
+                "✅ Mouvements de stocks avancés",
+                "✅ API pour intégrations personnalisées",
+                "✅ Support prioritaire dédié",
+                "✅ Rapports personnalisables à l'infini"
+              ]
+            }
+          ],
+          "comparison": {
+            "title": "Tableau comparatif rapide",
+            "features": [
+              {
+                "name": "Points de vente",
+                "demarrage": "1",
+                "professionnel": "5",
+                "avance": "15"
+              },
+              {
+                "name": "Utilisateurs admin",
+                "demarrage": "3",
+                "professionnel": "7",
+                "avance": "15"
+              },
+              {
+                "name": "Stockage cloud",
+                "demarrage": "1 Go",
+                "professionnel": "10 Go",
+                "avance": "50 Go"
+              },
+              {
+                "name": "Support",
+                "demarrage": "Email (48h)",
+                "professionnel": "Email + Tél (24h)",
+                "avance": "Prioritaire (1h)"
+              },
+              {
+                "name": "Formation",
+                "demarrage": "Documentation",
+                "professionnel": "2h en ligne",
+                "avance": "1 journée sur site"
+              },
+              {
+                "name": "API d'intégration",
+                "demarrage": "❌",
+                "professionnel": "❌",
+                "avance": "✅"
+              },
+              {
+                "name": "Gestion emprunts",
+                "demarrage": "❌",
+                "professionnel": "🔜 Bientôt",
+                "avance": "✅"
+              }
+            ]
+          },
+          "faqs": [
+            {
+              "q": "Puis-je changer de pack à tout moment ?",
+              "a": "Oui ! Vous pouvez upgrader ou downgrader à tout moment. Le changement est immédiat pour les upgrades, et au prochain cycle pour les downgrades."
+            },
+            {
+              "q": "Que se passe-t-il si je dépasse les limites de mon pack ?",
+              "a": "Vous recevrez une notification vous invitant à passer au pack supérieur. Vos données restent accessibles en lecture seule jusqu'à la mise à niveau."
+            },
+            {
+              "q": "Les prix sont-ils TTC ou HT ?",
+              "a": "Tous nos prix sont TTC (Toutes Taxes Comprises). Aucun frais caché !"
+            },
+            {
+              "q": "Puis-je payer annuellement pour économiser ?",
+              "a": "Oui ! Paiement annuel = 2 mois offerts (économisez 16.67%). Contactez-nous pour en bénéficier."
+            }
+          ],
+          "cta": {
+            "title": "🎁 Offre spéciale de lancement",
+            "message": "Profitez de 14 jours d'essai gratuit + 1 mois offert sur votre premier abonnement !",
+            "action": "Démarrer l'essai gratuit",
+            "note": "Sans engagement • Sans carte bancaire • Annulation en 1 clic"
+          }
+        },
+        "trial": {
+          "title": "Essai Gratuit de 14 Jours 🎁",
+          "message": "Testez SG-Stock sans risque pendant 14 jours !\n\n✅ Accès COMPLET à toutes les fonctionnalités\n✅ Aucune carte bancaire requise\n✅ Vos données sont conservées si vous souscrivez\n✅ Support par email inclus\n✅ Annulation en 1 clic\n\n🚀 Comment ça marche ?\n1. Créez votre compte en 2 minutes\n2. Choisissez le pack à tester\n3. Explorez toutes les fonctionnalités\n4. Décidez à la fin des 14 jours\n\n💡 90% de nos clients testent le Pack Professionnel !",
+          "steps": [
+            "Inscrivez-vous sur sg-stock.com",
+            "Choisissez votre pack à tester",
+            "Configurez votre premier point de vente",
+            "Ajoutez vos produits",
+            "Commencez à vendre !"
+          ]
+        },
+        "upgrade": {
+          "title": "Passer à un pack supérieur 📈",
+          "message": "Votre entreprise grandit ? Félicitations ! 🎉\n\nPassez au pack supérieur en quelques clics :\n\n1️⃣ Allez dans 'Mon compte' → 'Abonnement'\n2️⃣ Cliquez sur 'Changer de pack'\n3️⃣ Sélectionnez le nouveau pack\n4️⃣ Payez uniquement la différence (au prorata)\n5️⃣ Changement instantané !\n\n💡 Vos données sont conservées\n💡 Pas de frais de changement\n💡 Les nouvelles fonctionnalités sont activées immédiatement"
+        }
+      }
+    },
+    "connexion": {
+      "name": "Connexion et Compte",
+      "icon": "🔐",
+      "responses": {
+        "login_problem": {
+          "title": "Problème de connexion ? Résolvons ça ensemble ! 🔐",
+          "steps": [
+            {
+              "title": "1️⃣ Vérifiez vos identifiants",
+              "details": "• Email correct ? (celui utilisé lors de l'inscription)\n• Mot de passe correct ? (attention aux majuscules/minuscules)\n• Désactivez le CAPS LOCK"
+            },
+            {
+              "title": "2️⃣ Mot de passe oublié ?",
+              "details": "• Cliquez sur 'Mot de passe oublié'\n• Entrez votre email professionnel\n• Vous recevrez un lien (valable 1h)\n• Vérifiez vos spams !\n• Créez un nouveau mot de passe fort"
+            },
+            {
+              "title": "3️⃣ Compte bloqué ?",
+              "details": "• Après 3 tentatives échouées → bloqué 15 min\n• Solution rapide : Réinitialisez votre mot de passe\n• Ou attendez 15 minutes"
+            },
+            {
+              "title": "4️⃣ Email non vérifié ?",
+              "details": "• Vérifiez votre boîte mail\n• Cliquez sur le lien de validation\n• Email non reçu ? Demandez un renvoi"
+            }
+          ],
+          "tips": [
+            "💡 Utilisez un gestionnaire de mots de passe",
+            "💡 Activez l'authentification à 2 facteurs",
+            "💡 Ne partagez jamais votre mot de passe"
+          ]
+        }
+      }
+    }
+  },
+  "supportInfo": {
+    "email": "support@sg-stock.com",
+    "phone": "+237 690 XX XX XX",
+    "hours": "Lun-Ven : 8h00 - 18h00 | Sam : 9h00 - 13h00",
+    "responseTime": "< 2 heures en moyenne",
+    "languages": ["Français", "Anglais"]
+  }
+}

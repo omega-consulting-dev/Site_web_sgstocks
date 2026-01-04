@@ -348,6 +348,11 @@
       </Carousel3d>
     </div>
   </div>
+  <div>
+    <!-- <ChatbotSGStock/> -->
+        <ChatbotSGStock1/>
+  </div>
+
 <!-- Section À Propos -->
 
   <section id="Apropos" class="min-h-screen bg-gray-800 py-12 md:py-20 px-4 md:px-6 text-white">
@@ -722,7 +727,7 @@
           </div>
           <h3 class="text-lg font-semibold">Phone</h3>
           <p class="text-sm">+237 693 26 35 17</p>
-          <p class="text-sm opacity-90">info@leogicom.com</p>
+          <p class="text-sm opacity-90">info@SG-Stock.com</p>
         </div>
 
         <!-- Localisation -->
@@ -877,6 +882,11 @@ import personne from '@/components/personne.vue';
 import { reactive } from 'vue';
 import { RouterLink } from 'vue-router'
 import { Carousel3d, Slide } from 'vue3-carousel-3d'
+
+// import ChatbotSGStock from '@/components/ChatbotSGStock.vue'
+import ChatbotSGStock1 from '@/components/ChatbotSGStock1.vue'
+
+
 
 const mobileMenuOpen = ref(false)
 const userMenuOpen = ref(false)
