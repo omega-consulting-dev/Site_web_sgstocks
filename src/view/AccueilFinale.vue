@@ -766,19 +766,19 @@
     <div class="max-w-7xl mx-auto px-4 md:px-6">
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 mb-8 md:mb-12">
         <!-- Logo et description -->
-        <div class="space-y-4 flex flex-col justify-center items-center md:items-start text-center md:text-left">
+        <div class="space-y-4 flex flex-col justify-center items-center md:items-start text-center md:text-left hidden  md:flex ">
           <div class="w-20 h-20 md:w-24 md:h-24">
             <img src="./../assets/image/OBJECTS.png" alt="SG-Stocks Logo" class="w-full h-full object-contain">
           </div>
-          <p class="text-gray-400 text-sm leading-relaxed max-w-xs">
+          <p class="text-gray-400 text-sm leading-relaxed max-w-xs hidden  md:flex">
             Contactez-nous pour entrer
 
 
           </p>
-          <p class="text-gray-400 text-sm leading-relaxed max-w-xs">
+          <p class="text-gray-400 text-sm leading-relaxed max-w-xs  hidden  md:flex">
             en possession de votre logiciel.
           </p>
-          <div class="flex gap-3 justify-center md:justify-start">
+          <div class="  md:gap-3 justify-center md:justify-start hidden  md:flex">
             <a href="#"
               class="w-9 h-9 bg-white/10 hover:bg-[#0EA5E9] rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110"
               aria-label="Facebook">
