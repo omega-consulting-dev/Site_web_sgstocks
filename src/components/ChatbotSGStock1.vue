@@ -1,4 +1,4 @@
-<script setup>
+g<script setup>
 import { ref, nextTick, watch } from 'vue'
 
 // États

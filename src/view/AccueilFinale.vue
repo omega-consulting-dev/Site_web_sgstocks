@@ -869,6 +869,7 @@
         </p>
       </div>
     </div>
+    
   </footer>
 
 
@@ -884,7 +885,9 @@ import { RouterLink } from 'vue-router'
 import { Carousel3d, Slide } from 'vue3-carousel-3d'
 
 // import ChatbotSGStock from '@/components/ChatbotSGStock.vue'
-import ChatbotSGStock1 from '@/components/ChatbotSGStock1.vue'
+// import ChatbotSGStock1 from '@/components/ChatbotSGStock1.vue'
+import ChatbotSGStock1 from '@/components/sgchat.vue'
+
 
 
 
@@ -1134,24 +1137,24 @@ function submitForm() {
 
 // Carousel
 const mesImages = ref([
-  "src/assets/image/slides1/dashbord.svg",
-  "src/assets/image/slides1/client.svg",
-  "src/assets/image/slides1/Facturaction - Copie.svg",
-  "src/assets/image/slides1/statistique - Copie.svg",
-  "src/assets/image/slides1/Suivie fournisseur.svg",
-  "src/assets/image/slides1/flyers-de-sgstock.jpg",
-  "src/assets/image/slides1/Frame 1171275919.svg",
-  "src/assets/image/slides1/statistique vente mesuel.jpg",
-  "src/assets/image/slides1/carte-de-visite-sg-stocks.jpg",
-  "src/assets/image/slides1/client.svg",
-  "src/assets/image/slides1/dashbord - Copie.svg",
-  "src/assets/image/slides1/reglement emprunt.jpg",
-  "src/assets/image/slides1/Red and Yellow Modern Scholarship Program Instagram Post.png",
-  "src/assets/image/slides1/Desk-Macbook-pro-scene-Set-vol2.jpg",
-  "src/assets/image/slides1/enregistrement emprunt.jpg",
-  "src/assets/image/slides1/paiement.svg",
-  "src/assets/image/slides1/proccessu.svg",
-  "src/assets/image/slides1/bilan.svg",
+  "/slides1/Bilan de resultat (1).svg",
+  "/slides1/client.svg",
+  "/slides1/Facturaction - Copie.svg",
+  "/slides1/statistique - Copie.svg",
+  "/slides1/Suivie fournisseur.svg",
+  "/slides1/flyers-de-sgstock.jpg",
+  "/slides1/Frame 1171275919.svg",
+  "/slides1/statistique vente mesuel.jpg",
+  "/slides1/carte-de-visite-sg-stocks.jpg",
+  "/slides1/client.svg",
+  "/slides1/dashbord - Copie.svg",
+  "/slides1/reglement emprunt.jpg",
+  "/slides1/Red and Yellow Modern Scholarship Program Instagram Post.png",
+  "/slides1/Desk-Macbook-pro-scene-Set-vol2.jpg",
+  "/slides1/enregistrement emprunt.jpg",
+  "/slides1/paiement.svg",
+  "/slides1/proccessu.svg",
+  "/slides1/bilan.svg",
 ])
  //État pour la largeur de l'écran
 const windowWidth = ref(0);
