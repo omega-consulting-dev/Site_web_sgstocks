@@ -47,12 +47,12 @@
                 </div>
 
                 <!-- Ligne de séparation -->
-                    <hr class="w-full border-gray-300 transition-colors duration-300 group-hover:border-gray-500" />
+                <hr class="w-full border-gray-300 transition-colors duration-300 group-hover:border-gray-500" />
 
                 <!-- Prix Initial Barré -->
                 <div class="flex items-baseline gap-1 mb-2">
                     <span class="text-[22px] font-semibold text-gray-400 line-through group-hover:text-white">{{ plan.pi
-                        }}</span>
+                    }}</span>
                     <span class="text-[11px] text-gray-400 group-hover:text-white">FCFA</span>
                 </div>
 
@@ -115,10 +115,13 @@
 
             <!-- Bouton et footer -->
             <div class="flex flex-col items-center gap-2  mt-2">
-                <button class="w-full bg-[#F9D783] text-[#000B6B] rounded-md py-[5px] md:py-[6px] px-4
-                       text-[12px] md:text-[14px] font-semibold group-hover:bg-[#f5d06c] transition-colors mt-6">
-                    Essai gratuit pendant 14 jours
-                </button>
+
+                <router-link to="/connexion" class="w-full">
+                    <button class="w-full bg-[#F9D783] text-[#000B6B] rounded-md py-[5px] md:py-[6px] px-4
+           text-[12px] md:text-[14px] font-semibold group-hover:bg-[#f5d06c] transition-colors mt-6">
+                        Essai gratuit pendant 14 jours
+                    </button>
+                </router-link>
 
                 <p
                     class="text-center text-[11px] text-gray-500 transition-colors duration-300 group-hover:text-gray-300">
@@ -132,7 +135,7 @@
 </template>
 <script setup>
 import { ref, computed, onMounted, onBeforeUnmount } from 'vue'
-
+import connexion from './../view/ConnexionCompte.vue'
 const props = defineProps({
     plan: {
         type: Object,
