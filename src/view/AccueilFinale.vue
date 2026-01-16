@@ -258,11 +258,11 @@
           <!-- Texte du lien à gauche -->
           <div class="flex justify-center items-center  w-full text-center md:text-center text-[#D7E0D1]">
 
-            <RouterLink to="/connexion"
+            <a :href="demoUrl" target="_blank"
               class=" px-8 py-2 text-blue-500  bg-white rounded-[7px] font-semibold hover:text-white hover:bg-[#5067DA] hover:rounded-full duration-500 ">
               DEMONSTRATION
 
-            </RouterLink>
+            </a>
 
             <!-- BANNIÈRE FLOTTANTE - Milieu droite en bleu -->
             <!-- BANNIÈRE FLOTTANTE - Milieu droite en bleu -->
@@ -687,11 +687,11 @@
         </div>
 
         <!-- Bouton d'envoi -->
-        <RouterLink to="/connexion"> <button type="submit"
-            class="w-full bg-[#1E293B] text-white py-3.5 px-6 rounded-lg font-semibold hover:bg-[#0F172A] transition-colors duration-200">
-            Send Message
-          </button>
-        </RouterLink>
+        <button type="submit" :disabled="formSubmitting"
+          class="w-full bg-[#1E293B] text-white py-3.5 px-6 rounded-lg font-semibold hover:bg-[#0F172A] transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed">
+          {{ formSubmitting ? 'Envoi en cours...' : 'Send Message' }}
+        </button>
+        
         <!-- Lien -->
         <p class="text-center text-blue-600 font-medium mt-6">
           <RouterLink to="/connexion" class="hover:underline inline-flex items-center gap-1">
@@ -836,8 +836,8 @@
                 <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
                 <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
               </svg>
-              <a href="mailto:info@leogicom.com" class="hover:text-[#0EA5E9] transition-colors">
-                info@SGStock.com
+              <a href="mailto:info@sgstocks.com" class="hover:text-[#0EA5E9] transition-colors">
+                info@sgstocks.com
               </a>
             </li>
             <li class="flex items-center gap-2 justify-center md:justify-start">
@@ -864,7 +864,83 @@
     
   </footer>
 
+  <!-- Dialog Modal de Succès -->
+  <div
+    v-if="showSuccessDialog"
+    class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
+    @click="closeSuccessDialog"
+  >
+    <div
+      class="bg-white rounded-2xl shadow-2xl max-w-md w-full mx-4 transform transition-all"
+      @click.stop
+    >
+      <div class="p-8">
+        <!-- Icône de succès -->
+        <div class="flex justify-center mb-6">
+          <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center">
+            <svg class="w-10 h-10 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+          </div>
+        </div>
+        
+        <!-- Message de succès -->
+        <h3 class="text-2xl font-bold text-gray-900 text-center mb-3">
+          Message Envoyé !
+        </h3>
+        <p class="text-gray-600 text-center mb-6">
+          Votre message a été envoyé avec succès. Notre équipe vous contactera très bientôt.
+        </p>
+        
+        <!-- Bouton de fermeture -->
+        <button
+          @click="closeSuccessDialog"
+          class="w-full bg-green-600 text-white py-3 px-6 rounded-lg font-semibold hover:bg-green-700 transition-colors duration-200"
+        >
+          Parfait !
+        </button>
+      </div>
+    </div>
+  </div>
 
+  <!-- Dialog Modal d'Erreur -->
+  <div
+    v-if="showErrorDialog"
+    class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
+    @click="closeErrorDialog"
+  >
+    <div
+      class="bg-white rounded-2xl shadow-2xl max-w-md w-full mx-4 transform transition-all"
+      @click.stop
+    >
+      <div class="p-8">
+        <!-- Icône d'erreur -->
+        <div class="flex justify-center mb-6">
+          <div class="w-20 h-20 bg-red-100 rounded-full flex items-center justify-center">
+            <svg class="w-10 h-10 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+          </div>
+        </div>
+        
+        <!-- Message d'erreur -->
+        <h3 class="text-2xl font-bold text-gray-900 text-center mb-3">
+          Erreur d'Envoi
+        </h3>
+        <p class="text-gray-600 text-center mb-6">
+          {{ dialogErrorMessage }}
+        </p>
+        
+        <!-- Bouton de fermeture -->
+        <button
+          @click="closeErrorDialog"
+          class="w-full bg-red-600 text-white py-3 px-6 rounded-lg font-semibold hover:bg-red-700 transition-colors duration-200"
+        >
+          Réessayer
+        </button>
+      </div>
+    </div>
+  </div>
 
 </template>
 
@@ -880,8 +956,19 @@ import { Carousel3d, Slide } from 'vue3-carousel-3d'
 // import ChatbotSGStock1 from '@/components/ChatbotSGStock1.vue'
 import ChatbotSGStock1 from '@/components/sgchat.vue'
 
-
-
+// URL de la démo - détecte automatiquement l'environnement
+const demoUrl = computed(() => {
+  const hostname = window.location.hostname
+  const port = window.location.port
+  
+  // En local (localhost)
+  if (hostname === 'localhost' || hostname === '127.0.0.1') {
+    return `http://demo.localhost:${port || '5173'}/login?demo=true`
+  }
+  
+  // En production
+  return 'https://demo.sgstocks.com/login?demo=true'
+})
 
 const mobileMenuOpen = ref(false)
 const userMenuOpen = ref(false)
@@ -1117,14 +1204,66 @@ const form = reactive({
   message: '',
 })
 
-function submitForm() {
-  alert(`Message envoyé par ${form.firstName} ${form.lastName}`)
-  // Réinitialiser le formulaire
-  form.firstName = ''
-  form.lastName = ''
-  form.email = ''
-  form.phone = ''
-  form.message = ''
+const formSubmitting = ref(false)
+const formSuccess = ref(false)
+const formError = ref('')
+const showSuccessDialog = ref(false)
+const showErrorDialog = ref(false)
+const dialogErrorMessage = ref('')
+
+function closeSuccessDialog() {
+  showSuccessDialog.value = false
+}
+
+function closeErrorDialog() {
+  showErrorDialog.value = false
+}
+
+async function submitForm() {
+  formSubmitting.value = true
+  formError.value = ''
+  formSuccess.value = false
+
+  try {
+    const response = await fetch('http://localhost:8000/api/v1/auth/contact-messages/', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        first_name: form.firstName,
+        last_name: form.lastName,
+        email: form.email,
+        phone: form.phone,
+        message: form.message,
+      }),
+    })
+
+    if (response.ok) {
+      const data = await response.json()
+      formSuccess.value = true
+      
+      // Réinitialiser le formulaire
+      form.firstName = ''
+      form.lastName = ''
+      form.email = ''
+      form.phone = ''
+      form.message = ''
+      
+      // Afficher le dialog de succès
+      showSuccessDialog.value = true
+    } else {
+      const errorData = await response.json()
+      dialogErrorMessage.value = errorData.message || 'Une erreur est survenue lors de l\'envoi'
+      showErrorDialog.value = true
+    }
+  } catch (error) {
+    dialogErrorMessage.value = 'Impossible de contacter le serveur. Veuillez réessayer plus tard.'
+    showErrorDialog.value = true
+    console.error('Erreur:', error)
+  } finally {
+    formSubmitting.value = false
+  }
 }
 
 // Carousel

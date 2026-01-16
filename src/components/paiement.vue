@@ -108,7 +108,7 @@
 
                 <!-- Bouton et footer -->
                 <div class="flex flex-col items-center gap-2 mt-auto">
-                    <button class="w-full bg-[#F9D783] text-[#000B6B] rounded-md py-[5px] md:py-[6px] px-4
+                    <button @click="handleTrialClick" class="w-full bg-[#F9D783] text-[#000B6B] rounded-md py-[5px] md:py-[6px] px-4
                        text-[12px] md:text-[14px] font-semibold hover:bg-[#f5d06c] transition-colors">
                         Essai gratuit pendant 14 jours
                     </button>
@@ -124,12 +124,20 @@
 </template>
 
 <script setup>
+import { useRouter } from 'vue-router'
+
+const router = useRouter()
+
 defineProps({
     plan: {
         type: Object,
         required: true
     }
 })
+
+const handleTrialClick = () => {
+    router.push('/connexion')
+}
 </script>
 
 <style scoped>

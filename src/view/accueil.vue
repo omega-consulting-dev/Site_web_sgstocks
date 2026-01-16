@@ -29,7 +29,7 @@
         class="text-white text-center font-bold text-2xl md:text-3xl lg:text-4xl xl:text-5xl mb-4 md:mb-6 leading-tight">
         Simplifiez votre comptabilité
         <br class="hidden sm:block" />
-        <span class="block mt-2">avec leaGcom</span>
+        <span class="block mt-2">avec sgstocks</span>
       </h1>
 
       <!-- SECTION DESCRIPTION + IMAGE -->
@@ -387,7 +387,7 @@
           </div>
           <h3 class="text-lg font-semibold">Phone</h3>
           <p class="text-sm">+237 693 26 35 17</p>
-          <p class="text-sm opacity-90">info@leogicom.com</p>
+          <p class="text-sm opacity-90">info@sgstocks.com</p>
         </div>
 
         <!-- Localisation -->
@@ -501,8 +501,8 @@
                 <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
                 <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
               </svg>
-              <a href="mailto:info@leogicom.com" class="hover:text-[#0EA5E9] transition-colors">
-                info@leogicom.com
+              <a href="mailto:info@sgstocks.com" class="hover:text-[#0EA5E9] transition-colors">
+                info@sgstocks.com
               </a>
             </li>
             <li class="flex items-center gap-2 justify-center md:justify-start">
@@ -520,7 +520,7 @@
       <!-- Copyright -->
       <div class="pt-6 md:pt-8 border-t border-gray-800 text-center">
         <p class="text-gray-500 text-xs md:text-sm">
-          © 2025 Leogicom. All rights reserved.
+          © 2025 Sgstocks. All rights reserved.
         </p>
       </div>
     </div>
