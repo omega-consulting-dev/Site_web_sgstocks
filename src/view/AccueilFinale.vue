@@ -258,7 +258,11 @@
           <!-- Texte du lien à gauche -->
           <div class="flex justify-center items-center  w-full text-center md:text-center text-[#D7E0D1]">
 
+<<<<<<< HEAD
             <a :href="demoUrl" target="_blank"
+=======
+            <RouterLink to=""
+>>>>>>> 19acf46fb4b87e10da7bfb82c8fd887b3990a612
               class=" px-8 py-2 text-blue-500  bg-white rounded-[7px] font-semibold hover:text-white hover:bg-[#5067DA] hover:rounded-full duration-500 ">
               DEMONSTRATION
 
