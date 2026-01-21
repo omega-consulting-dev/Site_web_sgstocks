@@ -142,14 +142,12 @@
 </template>
 <script setup>
 import { ref, computed, onMounted, onBeforeUnmount } from 'vue'
-<<<<<<< HEAD
 import { useRouter } from 'vue-router'
 
 const router = useRouter()
 
-=======
+
 import connexion from './../view/ConnexionCompte.vue'
->>>>>>> 19acf46fb4b87e10da7bfb82c8fd887b3990a612
 const props = defineProps({
     plan: {
         type: Object,

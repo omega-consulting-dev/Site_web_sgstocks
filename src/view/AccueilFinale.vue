@@ -255,14 +255,10 @@
 
         <!-- CTA -->
         <div class="flex ">
-          <!-- Texte du lien à gauche -->
+          <!-- Texte du  à gauche -->
           <div class="flex justify-center items-center  w-full text-center md:text-center text-[#D7E0D1]">
 
-<<<<<<< HEAD
             <a :href="demoUrl" target="_blank"
-=======
-            <RouterLink to=""
->>>>>>> 19acf46fb4b87e10da7bfb82c8fd887b3990a612
               class=" px-8 py-2 text-blue-500  bg-white rounded-[7px] font-semibold hover:text-white hover:bg-[#5067DA] hover:rounded-full duration-500 ">
               DEMONSTRATION
 
@@ -1275,21 +1271,21 @@ const mesImages = ref([
   "/slides1/Bilan de resultat (1).svg",
   "/slides1/client.svg",
   "/slides1/Facturaction - Copie.svg",
-  "/slides1/statistique - Copie.svg",
-  "/slides1/Suivie fournisseur.svg",
   "/slides1/flyers-de-sgstock.jpg",
-  "/slides1/Frame 1171275919.svg",
+  "/image_slider/ai7.png",
+  "/image_slider/ai1.png",
   "/slides1/statistique vente mesuel.jpg",
-  "/slides1/carte-de-visite-sg-stocks.jpg",
   "/slides1/client.svg",
-  "/slides1/dashbord - Copie.svg",
   "/slides1/reglement emprunt.jpg",
-  "/slides1/Red and Yellow Modern Scholarship Program Instagram Post.png",
+  "/image_slider/ai10.jpg",
   "/slides1/Desk-Macbook-pro-scene-Set-vol2.jpg",
+    "/image_slider/ai8.png",
+  "/image_slider/ai9.jpg",  
   "/slides1/enregistrement emprunt.jpg",
-  "/slides1/paiement.svg",
-  "/slides1/proccessu.svg",
-  "/slides1/bilan.svg",
+  "/image_slider/ai3.jpg",
+  
+    "/image_slider/ai6.png",
+    "/image_slider/ai2.png"
 ])
  //État pour la largeur de l'écran
 const windowWidth = ref(0);
