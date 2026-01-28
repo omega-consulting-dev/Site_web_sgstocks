@@ -324,24 +324,12 @@
   </div>
 
   <!-- Slider images -->
- <div class="w-full px-4 sm:px-0 sm:w-3/4 md:w-2/3 mx-auto">
+  <div class="w-full px-4 sm:px-0 sm:w-3/4 md:w-2/3 mx-auto">
     <div class="carousel-full w-full overflow-hidden">
-      <Carousel3d 
-        ref="carousel" 
-        :controls-visible="true" 
-        :controls-prev-html="'&#10092;'"
-        :controls-next-html="'&#10093;'" 
-        :controls-width="controlsWidth" 
-        :controls-height="controlsHeight" 
-        :clickable="true" 
-        :space="carouselSpace"
-        :display="carouselDisplay" 
-        :width="carouselWidth" 
-        :height="carouselHeight" 
-        :border="0" 
-        :perspective="50" 
-        :inverse-scaling="inverseScaling"
-      >
+      <Carousel3d ref="carousel" :controls-visible="true" :controls-prev-html="'&#10092;'"
+        :controls-next-html="'&#10093;'" :controls-width="controlsWidth" :controls-height="controlsHeight"
+        :clickable="true" :space="carouselSpace" :display="carouselDisplay" :width="carouselWidth"
+        :height="carouselHeight" :border="0" :perspective="50" :inverse-scaling="inverseScaling">
         <Slide v-for="(img, i) in mesImages" :key="i" :index="i">
           <img :src="img" class="carousel-img w-full h-full object-cover rounded-lg" />
         </Slide>
@@ -350,193 +338,168 @@
   </div>
   <div>
     <!-- <ChatbotSGStock/> -->
-        <ChatbotSGStock1/>
+    <ChatbotSGStock1 />
   </div>
 
-<!-- Section À Propos -->
+  <!-- Section À Propos -->
 
-<section id="Apropos" class="min-h-screen bg-gray-800 py-12 md:py-20 px-4 md:px-6 text-white">
-  <div class="max-w-7xl mx-auto">
-    <!-- Titre de la section -->
-    <div class="text-center mb-12 md:mb-16">
-      <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-        À Propos de <span class="text-[#0FDBD0]">Nous</span>
-      </h2>
-      <div class="w-16 md:w-24 h-1 bg-[#0FDBD0] mx-auto rounded-full"></div>
-    </div>
+  <section id="Apropos" class="min-h-screen bg-gray-800 py-12 md:py-20 px-4 md:px-6 text-white">
+    <div class="max-w-7xl mx-auto">
+      <!-- Titre de la section -->
+      <div class="text-center mb-12 md:mb-16">
+        <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+          À Propos de <span class="text-[#0FDBD0]">Nous</span>
+        </h2>
+        <div class="w-16 md:w-24 h-1 bg-[#0FDBD0] mx-auto rounded-full"></div>
+      </div>
 
-    <!-- Contenu principal -->
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
-      
-      <!-- Partie Gauche - Texte -->
-      <div class="space-y-6 lg:space-y-8">
-        <!-- Introduction -->
-        <div class="bg-white/5 rounded-2xl p-8 border border-white/10 hover:border-[#0FDBD0]/50 transition-all duration-300 hover:shadow-xl">
-          <h3 class="text-2xl md:text-3xl font-bold mb-6 flex items-center gap-3">
-            <span class="text-[#0FDBD0] text-3xl">👋</span>
-            <span>Qui Sommes Nous ?</span>
-          </h3>
-          <div class="space-y-4 text-base md:text-lg leading-relaxed">
-            <p>
-              <span class="text-[#0FDBD0] font-semibold">SG-STOCK</span> est une solution ERP complète et innovante
-              conçue pour optimiser la gestion globale de votre entreprise.
-            </p>
-            <!-- Paragraphes cachés par défaut, visibles si expanded -->
-            <p v-show="showMoreIntro">
-              Notre plateforme 3-en-1 combine intelligemment la gestion des stocks, la comptabilité avancée et
-              l'analyse statistique de vos ventes en temps réel. Développée avec les technologies les plus récentes,
-              SG-STOCK s'adapte aux besoins spécifiques des PME et commerces en quête de performance.
-            </p>
-            <p v-show="showMoreIntro">
-              Transformez vos données en décisions stratégiques et propulsez votre activité vers de nouveaux sommets.
-            </p>
+      <!-- Contenu principal -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
+
+        <!-- Partie Gauche - Texte -->
+        <div class="space-y-6 lg:space-y-8">
+          <!-- Introduction -->
+          <div
+            class="bg-white/5 rounded-2xl p-8 border border-white/10 hover:border-[#0FDBD0]/50 transition-all duration-300 hover:shadow-xl">
+            <h3 class="text-2xl md:text-3xl font-bold mb-6 flex items-center gap-3">
+              <span class="text-[#0FDBD0] text-3xl">👋</span>
+              <span>Qui Sommes Nous ?</span>
+            </h3>
+            <div class="space-y-4 text-base md:text-lg leading-relaxed">
+              <p>
+                <span class="text-[#0FDBD0] font-semibold">SG-STOCK</span> est une solution ERP complète et innovante
+                conçue pour optimiser la gestion globale de votre entreprise.
+              </p>
+              <!-- Paragraphes cachés par défaut, visibles si expanded -->
+              <p v-show="showMoreIntro">
+                Notre plateforme 3-en-1 combine intelligemment la gestion des stocks, la comptabilité avancée et
+                l'analyse statistique de vos ventes en temps réel. Développée avec les technologies les plus récentes,
+                SG-STOCK s'adapte aux besoins spécifiques des PME et commerces en quête de performance.
+              </p>
+              <p v-show="showMoreIntro">
+                Transformez vos données en décisions stratégiques et propulsez votre activité vers de nouveaux sommets.
+              </p>
+            </div>
+
+            <!-- Bouton "Voir plus" VISIBLE SUR TOUS LES ÉCRANS -->
+            <button @click="showMoreIntro = !showMoreIntro"
+              class="mt-6 text-[#0FDBD0] font-semibold text-base flex items-center gap-2 hover:gap-3 transition-all duration-200 hover:text-[#0FDBD0]/80">
+              {{ showMoreIntro ? 'Voir moins' : 'Voir plus' }}
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                stroke="currentColor" class="w-5 h-5 transition-transform duration-200"
+                :class="{ 'rotate-180': showMoreIntro }">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+              </svg>
+            </button>
           </div>
-          
-          <!-- Bouton "Voir plus" VISIBLE SUR TOUS LES ÉCRANS -->
-          <button 
-            @click="showMoreIntro = !showMoreIntro"
-            class="mt-6 text-[#0FDBD0] font-semibold text-base flex items-center gap-2 hover:gap-3 transition-all duration-200 hover:text-[#0FDBD0]/80"
-          >
-            {{ showMoreIntro ? 'Voir moins' : 'Voir plus' }}
-            <svg 
-              xmlns="http://www.w3.org/2000/svg" 
-              fill="none" 
-              viewBox="0 0 24 24" 
-              stroke-width="2" 
-              stroke="currentColor" 
-              class="w-5 h-5 transition-transform duration-200"
-              :class="{ 'rotate-180': showMoreIntro }"
-            >
-              <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-            </svg>
-          </button>
+
+          <!-- Pourquoi nous choisir -->
+          <div
+            class="bg-gradient-to-br from-[#0FDBD0]/10 to-transparent backdrop-blur-sm rounded-2xl p-8 border border-[#0FDBD0]/30 hover:border-[#0FDBD0]/60 transition-all duration-300 hover:shadow-2xl">
+            <h3 class="text-2xl md:text-3xl font-bold mb-6 flex items-center gap-3">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" class="w-8 h-8 text-[#0FDBD0] flex-shrink-0">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l-.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456ZM16.894 20.567 16.5 21.75l-.394-1.183a2.25 2.25 0 0 0-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 0 0 1.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 0 0 1.423 1.423l1.183.394-1.183.394a2.25 2.25 0 0 0-1.423 1.423Z" />
+              </svg>
+              Pourquoi nous choisir
+            </h3>
+            <div class="space-y-4 text-base leading-relaxed">
+              <p>
+                <span class="text-[#0FDBD0] font-semibold">SG-STOCK</span> se distingue par son approche tout-en-un qui
+                élimine le besoin de jongler entre plusieurs logiciels coûteux. Notre interface intuitive permet une
+                prise en main rapide, réduisant le temps de formation de vos équipes.
+              </p>
+              <!-- Paragraphes cachés par défaut, visibles si expanded -->
+              <p v-show="showMoreWhy">
+                Avec plus de 12 modules interconnectés, vous disposez d'une vision à 360° de votre activité : gestion
+                des stocks, ventes, facturation, clients, fournisseurs, et bien plus encore.
+              </p>
+              <p v-show="showMoreWhy">
+                Notre tableau de bord intelligent transforme vos données en insights exploitables pour des décisions
+                éclairées en temps réel. La sécurité de vos données est garantie avec des sauvegardes automatiques et un
+                hébergement sécurisé.
+              </p>
+              <p v-show="showMoreWhy">
+                Choisir SG-STOCK, c'est investir dans la croissance durable et l'efficacité opérationnelle de votre
+                entreprise.
+              </p>
+            </div>
+
+            <!-- Bouton "Voir plus" VISIBLE SUR TOUS LES ÉCRANS -->
+            <button @click="showMoreWhy = !showMoreWhy"
+              class="mt-6 text-[#0FDBD0] font-semibold text-base flex items-center gap-2 hover:gap-3 transition-all duration-200 hover:text-[#0FDBD0]/80">
+              {{ showMoreWhy ? 'Voir moins' : 'Voir plus' }}
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                stroke="currentColor" class="w-5 h-5 transition-transform duration-200"
+                :class="{ 'rotate-180': showMoreWhy }">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+              </svg>
+            </button>
+          </div>
         </div>
 
-        <!-- Pourquoi nous choisir -->
-        <div class="bg-gradient-to-br from-[#0FDBD0]/10 to-transparent backdrop-blur-sm rounded-2xl p-8 border border-[#0FDBD0]/30 hover:border-[#0FDBD0]/60 transition-all duration-300 hover:shadow-2xl">
-          <h3 class="text-2xl md:text-3xl font-bold mb-6 flex items-center gap-3">
+        <!-- Nos fonctionnalités -->
+        <div
+          class="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-[#0FDBD0]/50 transition-all duration-300 hover:shadow-xl">
+          <h3 class="text-2xl md:text-3xl font-bold mb-8 flex justify-center items-center gap-3">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
               stroke="currentColor" class="w-8 h-8 text-[#0FDBD0] flex-shrink-0">
               <path stroke-linecap="round" stroke-linejoin="round"
-                d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l-.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456ZM16.894 20.567 16.5 21.75l-.394-1.183a2.25 2.25 0 0 0-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 0 0 1.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 0 0 1.423 1.423l1.183.394-1.183.394a2.25 2.25 0 0 0-1.423 1.423Z" />
+                d="M17.25 6.75 22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3-4.5 16.5" />
             </svg>
-            Pourquoi nous choisir
+            Nos Fonctionnalités
           </h3>
-          <div class="space-y-4 text-base leading-relaxed">
-            <p>
-              <span class="text-[#0FDBD0] font-semibold">SG-STOCK</span> se distingue par son approche tout-en-un qui
-              élimine le besoin de jongler entre plusieurs logiciels coûteux. Notre interface intuitive permet une
-              prise en main rapide, réduisant le temps de formation de vos équipes.
-            </p>
-            <!-- Paragraphes cachés par défaut, visibles si expanded -->
-            <p v-show="showMoreWhy">
-              Avec plus de 12 modules interconnectés, vous disposez d'une vision à 360° de votre activité : gestion
-              des stocks, ventes, facturation, clients, fournisseurs, et bien plus encore.
-            </p>
-            <p v-show="showMoreWhy">
-              Notre tableau de bord intelligent transforme vos données en insights exploitables pour des décisions
-              éclairées en temps réel. La sécurité de vos données est garantie avec des sauvegardes automatiques et un
-              hébergement sécurisé.
-            </p>
-            <p v-show="showMoreWhy">
-              Choisir SG-STOCK, c'est investir dans la croissance durable et l'efficacité opérationnelle de votre
-              entreprise.
-            </p>
+
+          <!-- Liste des fonctionnalités - SEULEMENT 2 PAR COLONNE PAR DÉFAUT -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
+            <!-- Première colonne -->
+            <div class="space-y-4">
+              <div v-for="(fonct, index) in fonctionnalites" :key="'fonct1-' + index"
+                v-show="showMoreFeatures || index < 4"
+                class="flex items-center gap-2 p-2 rounded-lg hover:bg-white/5 transition-all duration-200">
+                <div
+                  class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-[#0736CF] flex items-center justify-center flex-shrink-0 shadow-lg">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="w-5 h-5 md:w-6 md:h-6 text-white">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
+                  </svg>
+                </div>
+                <span class="text-base md:text-lg font-semibold">{{ fonct }}</span>
+              </div>
+            </div>
+
+            <!-- Deuxième colonne -->
+            <div class="space-y-4">
+              <div v-for="(fonct, index) in fonctionnalites1" :key="'fonct2-' + index"
+                v-show="showMoreFeatures || index < 4"
+                class="flex items-center gap-2 p-1 rounded-lg hover:bg-white/5 transition-all duration-200">
+                <div
+                  class="w-8 h-10 md:w-12 md:h-12 rounded-full bg-[#0736CF] flex items-center justify-center flex-shrink-0 shadow-lg">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="w-5 h-5 md:w-6 md:h-6 text-white">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
+                  </svg>
+                </div>
+                <span class="text-base md:text-lg font-semibold">{{ fonct }}</span>
+              </div>
+            </div>
           </div>
-          
-          <!-- Bouton "Voir plus" VISIBLE SUR TOUS LES ÉCRANS -->
-          <button 
-            @click="showMoreWhy = !showMoreWhy"
-            class="mt-6 text-[#0FDBD0] font-semibold text-base flex items-center gap-2 hover:gap-3 transition-all duration-200 hover:text-[#0FDBD0]/80"
-          >
-            {{ showMoreWhy ? 'Voir moins' : 'Voir plus' }}
-            <svg 
-              xmlns="http://www.w3.org/2000/svg" 
-              fill="none" 
-              viewBox="0 0 24 24" 
-              stroke-width="2" 
-              stroke="currentColor" 
-              class="w-5 h-5 transition-transform duration-200"
-              :class="{ 'rotate-180': showMoreWhy }"
-            >
+
+          <!-- LIEN "Voir plus" simple (pas de bouton stylé) VISIBLE SUR TOUS LES ÉCRANS -->
+          <button @click="showMoreFeatures = !showMoreFeatures"
+            class="mt-8 text-[#0FDBD0] font-semibold text-base flex items-center gap-2 hover:gap-3 transition-all duration-200 hover:text-[#0FDBD0]/80 underline decoration-[#0FDBD0]/50 underline-offset-4 hover:decoration-[#0FDBD0]/80">
+            {{ showMoreFeatures ? 'Voir moins' : 'Voir toutes les fonctionnalités' }}
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+              stroke="currentColor" class="w-5 h-5 transition-transform duration-200"
+              :class="{ 'rotate-180': showMoreFeatures }">
               <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
             </svg>
           </button>
         </div>
       </div>
-
-      <!-- Nos fonctionnalités -->
-      <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-[#0FDBD0]/50 transition-all duration-300 hover:shadow-xl">
-        <h3 class="text-2xl md:text-3xl font-bold mb-8 flex justify-center items-center gap-3">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-            stroke="currentColor" class="w-8 h-8 text-[#0FDBD0] flex-shrink-0">
-            <path stroke-linecap="round" stroke-linejoin="round"
-              d="M17.25 6.75 22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3-4.5 16.5" />
-          </svg>
-          Nos Fonctionnalités
-        </h3>
-        
-        <!-- Liste des fonctionnalités - SEULEMENT 2 PAR COLONNE PAR DÉFAUT -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
-          <!-- Première colonne -->
-          <div class="space-y-4">
-            <div 
-              v-for="(fonct, index) in fonctionnalites" 
-              :key="'fonct1-' + index"
-              v-show="showMoreFeatures || index < 4"
-              class="flex items-center gap-2 p-2 rounded-lg hover:bg-white/5 transition-all duration-200"
-            >
-              <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-[#0736CF] flex items-center justify-center flex-shrink-0 shadow-lg">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                  stroke="currentColor" class="w-5 h-5 md:w-6 md:h-6 text-white">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
-                </svg>
-              </div>
-              <span class="text-base md:text-lg font-semibold">{{ fonct }}</span>
-            </div>
-          </div>
-
-          <!-- Deuxième colonne -->
-          <div class="space-y-4">
-            <div 
-              v-for="(fonct, index) in fonctionnalites1" 
-              :key="'fonct2-' + index"
-              v-show="showMoreFeatures || index < 4"
-              class="flex items-center gap-2 p-1 rounded-lg hover:bg-white/5 transition-all duration-200"
-            >
-              <div class="w-8 h-10 md:w-12 md:h-12 rounded-full bg-[#0736CF] flex items-center justify-center flex-shrink-0 shadow-lg">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                  stroke="currentColor" class="w-5 h-5 md:w-6 md:h-6 text-white">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
-                </svg>
-              </div>
-              <span class="text-base md:text-lg font-semibold">{{ fonct }}</span>
-            </div>
-          </div>
-        </div>
-        
-        <!-- LIEN "Voir plus" simple (pas de bouton stylé) VISIBLE SUR TOUS LES ÉCRANS -->
-        <button 
-          @click="showMoreFeatures = !showMoreFeatures"
-          class="mt-8 text-[#0FDBD0] font-semibold text-base flex items-center gap-2 hover:gap-3 transition-all duration-200 hover:text-[#0FDBD0]/80 underline decoration-[#0FDBD0]/50 underline-offset-4 hover:decoration-[#0FDBD0]/80"
-        >
-          {{ showMoreFeatures ? 'Voir moins' : 'Voir toutes les fonctionnalités' }}
-          <svg 
-            xmlns="http://www.w3.org/2000/svg" 
-            fill="none" 
-            viewBox="0 0 24 24" 
-            stroke-width="2" 
-            stroke="currentColor" 
-            class="w-5 h-5 transition-transform duration-200"
-            :class="{ 'rotate-180': showMoreFeatures }"
-          >
-            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-          </svg>
-        </button>
-      </div>
     </div>
-  </div>
-</section>
+  </section>
 
   <!-- Image fonctionnalités -->
 
@@ -605,13 +568,13 @@
   </section>
 
   <section id="tarifs"
-    class="  overflow-y-hidden  w-full h-fit bg-gradient-to-br from-indigo-800 via-purple-800 to-purple-900  flex justify-center items-center pt-5 md:pt-10 md:h-[900px]  font-[Poppins] ">
+    class="  overflow-y-hidden  w-full h-fit bg-gradient-to-br from-indigo-800 via-purple-800 to-purple-900  flex justify-center items-center pt-5 md:pt-10 md:h-[1100px]  font-[Poppins] ">
 
     <div class="w-full flex flex-col gap-5 md:gap-10 lex justify-center items-center ">
 
       <div class="flex flex-col justify-center items-center fixed-50 mb-1  md:mt-9 lg:md-12">
         <h2
-          class="w-full text-2xl md:text-[35px]  text-center flex  justify-center font-bold  text-white  mb-1 md:mt-9 lg:md-15   ">
+          class="w-full text-2xl md:text-[35px]  text-center flex  justify-center font-bold  text-white  mb-1 md:mt-15 lg:md-15   ">
           Nos Differents Plan</h2>
         <img src="./../assets/image/trait.png" alt="" class=" w-[220px] md:w-[320px] h-8">
       </div>
@@ -691,7 +654,7 @@
           class="w-full bg-[#1E293B] text-white py-3.5 px-6 rounded-lg font-semibold hover:bg-[#0F172A] transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed">
           {{ formSubmitting ? 'Envoi en cours...' : 'Send Message' }}
         </button>
-        
+
         <!-- Lien -->
         <p class="text-center text-blue-600 font-medium mt-6">
           <RouterLink to="/connexion" class="hover:underline inline-flex items-center gap-1">
@@ -717,7 +680,7 @@
           </div>
           <h3 class="text-lg font-semibold">Phone</h3>
           <p class="  text-sm hidden  md:flex">+237 693 26 35 17</p>
-          <p class="text-sm opacity-90 hidden  md:flex">info@SG-Stock.com</p> 
+          <p class="text-sm opacity-90 hidden  md:flex">info@SG-Stock.com</p>
         </div>
 
         <!-- Localisation -->
@@ -756,7 +719,8 @@
     <div class="max-w-7xl mx-auto px-4 md:px-6">
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 mb-8 md:mb-12">
         <!-- Logo et description -->
-        <div class="space-y-4 flex flex-col justify-center items-center md:items-start text-center md:text-left hidden  md:flex ">
+        <div
+          class="space-y-4 flex flex-col justify-center items-center md:items-start text-center md:text-left hidden  md:flex ">
           <div class=" md:w-24 md:h-10">
             <img src="./../assets/image/OBJECTS.png" alt="SG-Stocks Logo" class="w-full h-full object-contain">
           </div>
@@ -851,29 +815,23 @@
           </ul>
         </div>
       </div>
-      
+
 
       <!-- Copyright -->
-       <!-- Copyright -->
-    <div class="pt-12 md:pt-16 border-t border-gray-800 text-center">
-      <p class="text-gray-500 text-sm md:text-base">
-        © 2026 SG-Stock. Tous droits réservés. | Développé avec ❤️ à Douala, Cameroun
-      </p>
+      <!-- Copyright -->
+      <div class="pt-12 md:pt-16 border-t border-gray-800 text-center">
+        <p class="text-gray-500 text-sm md:text-base">
+          © 2026 SG-Stock. Tous droits réservés. | Développé avec ❤️ à Douala, Cameroun
+        </p>
+      </div>
     </div>
-    </div>
-    
+
   </footer>
 
   <!-- Dialog Modal de Succès -->
-  <div
-    v-if="showSuccessDialog"
-    class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
-    @click="closeSuccessDialog"
-  >
-    <div
-      class="bg-white rounded-2xl shadow-2xl max-w-md w-full mx-4 transform transition-all"
-      @click.stop
-    >
+  <div v-if="showSuccessDialog" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
+    @click="closeSuccessDialog">
+    <div class="bg-white rounded-2xl shadow-2xl max-w-md w-full mx-4 transform transition-all" @click.stop>
       <div class="p-8">
         <!-- Icône de succès -->
         <div class="flex justify-center mb-6">
@@ -883,7 +841,7 @@
             </svg>
           </div>
         </div>
-        
+
         <!-- Message de succès -->
         <h3 class="text-2xl font-bold text-gray-900 text-center mb-3">
           Message Envoyé !
@@ -891,12 +849,10 @@
         <p class="text-gray-600 text-center mb-6">
           Votre message a été envoyé avec succès. Notre équipe vous contactera très bientôt.
         </p>
-        
+
         <!-- Bouton de fermeture -->
-        <button
-          @click="closeSuccessDialog"
-          class="w-full bg-green-600 text-white py-3 px-6 rounded-lg font-semibold hover:bg-green-700 transition-colors duration-200"
-        >
+        <button @click="closeSuccessDialog"
+          class="w-full bg-green-600 text-white py-3 px-6 rounded-lg font-semibold hover:bg-green-700 transition-colors duration-200">
           Parfait !
         </button>
       </div>
@@ -904,15 +860,9 @@
   </div>
 
   <!-- Dialog Modal d'Erreur -->
-  <div
-    v-if="showErrorDialog"
-    class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
-    @click="closeErrorDialog"
-  >
-    <div
-      class="bg-white rounded-2xl shadow-2xl max-w-md w-full mx-4 transform transition-all"
-      @click.stop
-    >
+  <div v-if="showErrorDialog" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
+    @click="closeErrorDialog">
+    <div class="bg-white rounded-2xl shadow-2xl max-w-md w-full mx-4 transform transition-all" @click.stop>
       <div class="p-8">
         <!-- Icône d'erreur -->
         <div class="flex justify-center mb-6">
@@ -922,7 +872,7 @@
             </svg>
           </div>
         </div>
-        
+
         <!-- Message d'erreur -->
         <h3 class="text-2xl font-bold text-gray-900 text-center mb-3">
           Erreur d'Envoi
@@ -930,12 +880,10 @@
         <p class="text-gray-600 text-center mb-6">
           {{ dialogErrorMessage }}
         </p>
-        
+
         <!-- Bouton de fermeture -->
-        <button
-          @click="closeErrorDialog"
-          class="w-full bg-red-600 text-white py-3 px-6 rounded-lg font-semibold hover:bg-red-700 transition-colors duration-200"
-        >
+        <button @click="closeErrorDialog"
+          class="w-full bg-red-600 text-white py-3 px-6 rounded-lg font-semibold hover:bg-red-700 transition-colors duration-200">
           Réessayer
         </button>
       </div>
@@ -960,12 +908,12 @@ import ChatbotSGStock1 from '@/components/sgchat.vue'
 const demoUrl = computed(() => {
   const hostname = window.location.hostname
   const port = window.location.port
-  
+
   // En local (localhost)
   if (hostname === 'localhost' || hostname === '127.0.0.1') {
     return `http://demo.localhost:${port || '5173'}/login?demo=true`
   }
-  
+
   // En production
   return 'https://demo.sgstocks.com/login?demo=true'
 })
@@ -995,57 +943,95 @@ const showMoreFeatures = ref(false);
 
 const planDb = ref([
   {
-    'classe': 'Demarage simple',
-    "economie": "4 550",
-    "pi": "19,450",
-    "pf": "15000",
+    'classe': 'PACK 1',
+    // "economie": "4 550",
+    // "pi": "240 000",
+    "pf": "229 900",
+    "text1": "Réduction de 43,67 % après votre première recharge annuelle, \n soit 100 000 FCFA à payer à partir de la deuxième année.",
     features: [
-      'Suivre les revenus et les dépenses',
-      'Envoyez un nombre limité de factures',
+     
       'Pour un seul point de vente',
-      'pour 03 utilisateur admin max',
-      'Gestion 01 magasin',
-      'Stocks, produits, services',
-      'gestion des depenses',
+       "Pour 10 utilisateurs",
+               "15 Giga d'espace de stockage",
+       'Suivre les ventes et les dépenses',
+      // 'Envoyez un nombre illimité de factures',
+      // 'Pour 15 point de vente maxi',
+      ' Gestions des Stocks, des produits et des services',
+      'Encaissement, decaissement',
+      'Approvisionnement bancaire',
+      'Gestion des emprunts',
+      'Gestion des fournisseurs et clients',
+      'Gestion des depenses',
+      // 'Mouvement stocks',
       'Suivre vos statistiques',
-      '3Go d\'espace pour vos donnee'
-    ],
+      // 'Réglement dette fournisseurs et clients',
+      'Alerte des ruptures de stocks',
+      "Paramétrage et configuration du système + formation des utilisateurs à partir de 250 000 FCFA"
+   ],
   },
   {
-    'classe': 'Proffesionnel',
-    "economie": "10 000",
-    "pi": "50,000",
-    "pf": "40000",
+    'classe': 'Pack2',
+    // "economie": "10 000",
+    // "pi": "449,000",
+    "pf": "449 000",
+    "text1": "Réduction de 33.41 % après votre première recharge annuelle, \n soit 150 000 FCFA à payer à partir de la deuxième année.",
+
     features: [
-      'Suivre les revenus et les dépenses',
-      'Envoyez un nombre illimité de factures',
-      'Pour 5 point de vente maxi',
-      'Gestion 05 magasin',
-      'pour 07 utilisateur admin max',
-      'Stocks, produits, services',
+     
+      '1 Point de vente + 1 Magasin',
+    
+            "30 Giga d'espace de stockage", 
+               "Pour 15 utilisateurs",
+     'Suivre les ventes et les dépenses',
+      // 'Envoyez un nombre illimité de factures',
+      // 'Pour 15 point de vente maxi',
+      ' Gestions des Stocks, des produits et des services',
       'Encaissement, decaissement',
+      'Approvisionnement bancaire',
       'Gestion des emprunts',
-      'gestion des depenses'
+      'Gestion des fournisseurs et clients',
+      'Gestion des depenses',
+      // 'Mouvement stocks',
+      'Suivre vos statistiques',
+      // 'Réglement dette fournisseurs et clients',
+      'Alerte des ruptures de stocks',
+      "Paramétrage et configuration du système + formation des utilisateurs à partir de 250 000 FCFA"
+
     ],
-    comingSoon: ['Encaissement, decaissement', 'Gestion des emprunts', 'gestion des depenses'],
+    comingSoon: [ '1 Point de vente + 1 Magasin',   "30 Giga d'espace de stockage",  ],
   },
+  // Packs
   {
-    'classe': ' Avancé',
-    "economie": "20 000",
-    "pi": "80,000",
-    "pf": "60000",
+    'classe': ' PACK 3',
+    // "economie": " 000",
+    // "pi": "80,000",
+    "pf": "699 900",
+    "text1": "Réduction de 35.7 % après votre première recharge annuelle, \n soit 250 000 FCFA à payer à partir de la deuxième année.",
+
     features: [
-      'Suivre les revenus et les dépenses',
-      'Envoyez un nombre illimité de factures',
-      'Pour 15 point de vente maxi',
-      'Stocks, produits, services',
+      'Point de vente et magasin illimité',
+      "Nombre illimité d'utilisateurs",
+      
+      "50 Giga d'espace de stockage", 
+      'Suivre les ventes et les dépenses',
+      // 'Envoyez un nombre illimité de factures',
+      // 'Pour 15 point de vente maxi',
+      ' Gestions des Stocks, des produits et des services',
       'Encaissement, decaissement',
+      'Approvisionnement bancaire',
       'Gestion des emprunts',
-      'gestion des depenses',
-      'Mouvement stocks',
-      'Suivre vos statistiques'
+      'Gestion des fournisseurs et clients',
+      'Gestion des depenses',
+      // 'Mouvement stocks',
+      'Suivre vos statistiques',
+      // 'Réglement dette fournisseurs et clients',
+      'Alerte des ruptures de stocks',
+      "Paramétrage et configuration du système + formation des utilisateurs à partir de 250 000 FCFA"
+
+
     ],
-    comingSoon: ['gestion des depenses', 'Mouvement stocks', 'Suivre vos statistiques'],
+    comingSoon: [      'Point de vente et magasin illimité',
+        "Nombre illimité d'utilisateurs",   "50 Giga d'espace de stockage"],
   }
 ])
 
@@ -1100,9 +1086,8 @@ const handleLogout = () => {
   userMenuOpen.value = false
 }
 
-// État de visibilité de la bannière
-const isVisibleBanner = ref(false)
-const currentBannerIndex = ref(0)
+
+
 
 // Messages à afficher
 const banners = ref([
@@ -1127,40 +1112,47 @@ const banners = ref([
 ])
 
 // Bannière actuelle
+
+const currentBannerIndex = ref(0)
 const currentBanner = ref(banners.value[0])
-
+const isVisibleBanner = ref(false)
 let bannerInterval = null
+const isBannerClosed = ref(false) // ← flag pour savoir si l'utilisateur a fermé
 
-// Afficher la bannière après 3 secondes
+// Fonction pour fermer la bannière
+const closeBanner = () => {
+  isVisibleBanner.value = false
+  isBannerClosed.value = true
+  localStorage.setItem('floatingBannerClosed', 'true') // mémoriser dans le navigateur
+  if (bannerInterval) clearInterval(bannerInterval) // stopper l'intervalle
+}
+
 onMounted(() => {
+ 
+
+  // Afficher la bannière après 3 secondes
   setTimeout(() => {
-    isVisibleBanner.value = true
+    if (!isBannerClosed.value) {
+      isVisibleBanner.value = true
+    }
   }, 3000)
 
   // Changer de bannière toutes les 8 secondes
   bannerInterval = setInterval(() => {
-    isVisibleBanner.value = false
+    if (isBannerClosed.value) return // si fermé, ne rien faire
 
+    isVisibleBanner.value = false
     setTimeout(() => {
       currentBannerIndex.value = (currentBannerIndex.value + 1) % banners.value.length
       currentBanner.value = banners.value[currentBannerIndex.value]
       isVisibleBanner.value = true
-    }, 300)
+    }, 300) // transition
   }, 8000)
 })
 
-// Fermer la bannière
-const closeBanner = () => {
-  isVisibleBanner.value = false
-}
-
-// Nettoyage
 onBeforeUnmount(() => {
-  if (bannerInterval) {
-    clearInterval(bannerInterval)
-  }
+  if (bannerInterval) clearInterval(bannerInterval)
 })
-
 
 // ✅ CORRECTION : Déclarer vantaEffect au bon endroit
 // const haloRef = ref(null)
@@ -1242,14 +1234,14 @@ async function submitForm() {
     if (response.ok) {
       const data = await response.json()
       formSuccess.value = true
-      
+
       // Réinitialiser le formulaire
       form.firstName = ''
       form.lastName = ''
       form.email = ''
       form.phone = ''
       form.message = ''
-      
+
       // Afficher le dialog de succès
       showSuccessDialog.value = true
     } else {
@@ -1279,15 +1271,15 @@ const mesImages = ref([
   "/slides1/reglement emprunt.jpg",
   "/image_slider/ai10.jpg",
   "/slides1/Desk-Macbook-pro-scene-Set-vol2.jpg",
-    "/image_slider/ai8.png",
-  "/image_slider/ai9.jpg",  
+  "/image_slider/ai8.png",
+  "/image_slider/ai9.jpg",
   "/slides1/enregistrement emprunt.jpg",
   "/image_slider/ai3.jpg",
-  
-    "/image_slider/ai6.png",
-    "/image_slider/ai2.png"
+
+  "/image_slider/ai6.png",
+  "/image_slider/ai2.png"
 ])
- //État pour la largeur de l'écran
+//État pour la largeur de l'écran
 const windowWidth = ref(0);
 
 // Fonction pour mettre à jour la largeur
@@ -1372,7 +1364,7 @@ onMounted(() => {
     // Animation typing
     animateTyping()
 
- 
+
     // Animations reveal
     const revealElements = document.querySelectorAll(".reveal")
     let staggerCounter = 0
