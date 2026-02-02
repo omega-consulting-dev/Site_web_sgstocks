@@ -1,33 +1,24 @@
 <template>
-    <!-- Le wrapper avec le dégradé (agit comme bordure) -->
-
-
-    <main class="relative overflow-hidden flex flex-col text-black
-       w-[300px] sm:w-[290px] md:w-[320px] lg:w-[400px] min-h-full md:h-[850px]
+    <!-- Carte de tarification -->
+    <main class="relative overflow-visible flex flex-col text-black
+       w-[300px] sm:w-[290px] md:w-[320px] lg:w-[400px] h-auto
        font-[Poppins] bg-white rounded-[10px] border-[2px] shadow-lg border-r-[#153ABF] border-t-[#153ABF] border-b-[#153ABF] border-l-[#2B59FF]
        hover:bg-[#000B6B] hover:shadow-2xl hover:-translate-y-8
-       transition-all duration-700 group ">
-        <!-- Dégradé en bas, visible uniquement au hover -->
-
+       transition-all duration-700 group">
 
         <!-- Contenu avec padding -->
-        <div class="p-6 flex flex-col h-full  ">
+        <div class="p-6 flex flex-col">
 
             <!-- Badges en haut -->
             <div class="flex flex-col gap-1 mb-3">
                 <!-- Badge Populaire (conditionnel) -->
                 <div v-show="plan.classe == 'Proffesionnel'" class="flex flex-col gap-[5px] top-4 mb-1">
-
                     <!-- Badge Classe -->
-
                 </div>
                 <button
-                    class="text-[13px] w-fit px-3 py-1 rounded-[5px] font-bold bg-[#e6e6e6] text-[#000000d7] transition-colors duration-300  group-hover:bg-gray-200 group-hover:text-[#000B6B]">
+                    class="text-[13px] w-fit px-3 py-1 rounded-[5px] font-bold bg-[#e6e6e6] text-[#000000d7] transition-colors duration-300 group-hover:bg-gray-200 group-hover:text-[#000B6B]">
                     {{ plan.classe }}
                 </button>
-
-
-
             </div>
 
             <!-- Section Prix -->
@@ -135,20 +126,15 @@
                 </svg>
             </button>
 
-            <!-- Bouton et footer -->
-            <div class="flex flex-col items-center gap-2  mt-2">
-
-
-
-
-                <router-link to="/connexion" class="w-full">
-                    <button class="w-full bg-[#F9D783] text-[#000B6B] rounded-md py-[5px] md:py-[6px] px-4
-           text-[12px] md:text-[14px] font-semibold group-hover:bg-[#f5d06c] transition-colors mt-6">
-                        Essai gratuit pendant 14 jours
-                    </button>
-                </router-link>
-                <p
-                    class="text-center text-[11px] text-gray-500 transition-colors duration-300 group-hover:text-gray-300">
+            <!-- Bouton amélioré -->
+            <div class="flex flex-col items-center gap-3 mt-6">
+                <button @click="handleTrialClick" class="w-full bg-gradient-to-r from-yellow-400 to-yellow-500 text-gray-900 rounded-xl py-4 px-6
+                             text-sm sm:text-base font-bold shadow-lg
+                             hover:from-yellow-500 hover:to-yellow-600 hover:shadow-xl hover:scale-105
+                             transition-all duration-300">
+                    ✨ Essai gratuit pendant 14 jours
+                </button>
+                <p class="text-center text-[11px] text-gray-500 transition-colors duration-300 group-hover:text-gray-300">
                     Carte de crédit requise
                 </p>
             </div>
@@ -173,6 +159,16 @@ const props = defineProps({
 })
 
 const handleTrialClick = () => {
+    const packData = {
+        pack_id: props.plan.pack_id || 1,
+        pack_name: props.plan.classe,
+        plan_backend: props.plan.plan_backend,
+        price: props.plan.price,
+        renewal_price: props.plan.renewal_price,
+        selected_at: new Date().toISOString()
+    }
+    
+    localStorage.setItem('selected_pack', JSON.stringify(packData))
     router.push('/connexion')
 }
 

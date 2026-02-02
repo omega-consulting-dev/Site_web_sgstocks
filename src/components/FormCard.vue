@@ -45,6 +45,7 @@
 import { useRouter } from 'vue-router'
 
 const router = useRouter()
+const emit = defineEmits(['submit'])
 
 const props = defineProps({
   title: {
@@ -67,7 +68,12 @@ const props = defineProps({
 })
 
 const handleContinue = () => {
-  if (props.route) {
+  // Émet l'événement submit pour permettre la validation parent
+  emit('submit')
+  
+  // Navigation automatique seulement si route est définie ET qu'aucun listener @submit n'est présent
+  // Si un listener @submit existe, c'est à lui de gérer la navigation après validation
+  if (props.route && !emit.submit) {
     router.push(props.route)
   }
 }

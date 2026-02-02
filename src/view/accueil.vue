@@ -363,10 +363,20 @@
           class="w-full bg-[#1E293B] text-white py-3.5 px-6 rounded-lg font-semibold hover:bg-[#0F172A] transition-colors duration-200">
           Send Message
         </button>
+        
+        <!-- Message de succès -->
+        <div v-if="showSuccess" class="bg-green-50 border-2 border-green-500 rounded-lg p-4 text-center">
+          <div class="flex items-center justify-center gap-2 text-green-700 font-semibold">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+            </svg>
+            {{ successMessage }}
+          </div>
+        </div>
 
         <!-- Lien -->
         <p class="text-center text-blue-600 font-medium mt-6">
-          <a href="#" class="hover:underline inline-flex items-center gap-1">
+          <a href="https://demo.sgstocks.com/login?demo=true" target="_blank" class="hover:underline inline-flex items-center gap-1">
             Cliquez pour Suivre le lien pour la phase test 👍👌
           </a>
         </p>
@@ -547,15 +557,25 @@ const form = reactive({
   message: '',
 });
 
+const successMessage = ref('')
+const showSuccess = ref(false)
+
 function submitForm() {
-  // Vous pouvez traiter ici les données du formulaire
-  alert(`Message envoyé par ${form.firstName} ${form.lastName}`);
-  // Réinitialiser le formulaire si nécessaire
+  // Afficher un message de succès
+  successMessage.value = `Merci ${form.firstName} ${form.lastName}, votre message a été envoyé avec succès !`
+  showSuccess.value = true
+  
+  // Réinitialiser le formulaire
   form.firstName = '';
   form.lastName = '';
   form.email = '';
   form.phone = '';
   form.message = '';
+  
+  // Masquer le message après 5 secondes
+  setTimeout(() => {
+    showSuccess.value = false
+  }, 5000)
 }
 const planDb = ref([
 

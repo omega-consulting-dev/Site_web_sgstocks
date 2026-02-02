@@ -52,7 +52,7 @@
 
             <!-- User Profile Button -->
             <div class="relative">
-              <RouterLink to="/connexion"
+              <a href="#contact" @click.prevent="scrollToContact"
                 class="flex items-center gap-2 bg-blue-400 hover:bg-blue-500 backdrop-blur-sm px-4 py-2 rounded-[15px] transition-all duration-500 border border-white/20">
                 <!-- User Icon -->
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
@@ -63,7 +63,7 @@
 
                 <!-- User Name or Guest -->
                 <span class="text-sm font-medium">Se Connecter</span>
-              </RouterLink>
+              </a>
 
 
               <!-- User Dropdown Menu -->
@@ -269,7 +269,7 @@
             <Transition name="middle-right-slide">
               <div v-if="isVisibleBanner" :key="'floating-banner-' + currentBannerIndex"
                 class="fixed top-2/3  md:top-1/2 -translate-y-1/2 left-4 right-0 sm:left-auto sm:right-4 md:right-6 z-50 p-5 sm:p-5 md:p-6 w-[200px] sm:w-[360px] md:w-96 max-h-[80vh] overflow-y-auto rounded-2xl shadow-2xl transition-all cursor-pointer transform origin-center bg-blue-900/90 hover:scale-[1.02]">
-                <RouterLink :to="currentBanner.to" class="block">
+                <a :href="currentBanner.to === '/connexion' ? 'https://demo.sgstocks.com/login?demo=true' : currentBanner.to" target="_blank" class="block">
                   <div class="text-white relative">
                     <!-- En-tête avec icône -->
                     <div class="flex items-start mb-4 space-x-3 pr-8">
@@ -308,7 +308,7 @@
                       </svg>
                     </button>
                   </div>
-                </RouterLink>
+                </a>
               </div>
             </Transition>
           </div>
@@ -568,38 +568,44 @@
   </section>
 
   <section id="tarifs"
-    class="  overflow-y-hidden  w-full h-fit bg-gradient-to-br from-indigo-800 via-purple-800 to-purple-900  flex justify-center items-center pt-5 md:pt-10 md:h-[1100px]  font-[Poppins] ">
+    class="w-full bg-gradient-to-br from-indigo-800 via-purple-800 to-purple-900 
+           flex justify-center items-center py-6 sm:py-8 lg:py-10 font-[Poppins]">
 
-    <div class="w-full flex flex-col gap-5 md:gap-10 lex justify-center items-center ">
+    <div class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-4 lg:gap-6">
 
-      <div class="flex flex-col justify-center items-center fixed-50 mb-1  md:mt-9 lg:md-12">
-        <h2
-          class="w-full text-2xl md:text-[35px]  text-center flex  justify-center font-bold  text-white  mb-1 md:mt-15 lg:md-15   ">
-          Nos Differents Plan</h2>
-        <img src="./../assets/image/trait.png" alt="" class=" w-[220px] md:w-[320px] h-8">
+      <!-- Titre de la section -->
+      <div class="flex flex-col justify-center items-center mb-2 sm:mb-3">
+        <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-center font-bold text-white mb-2">
+          Nos Différents Plans
+        </h2>
+        <img src="./../assets/image/trait.png" alt="" class="w-[180px] sm:w-[220px] md:w-[280px] lg:w-[320px] h-6 sm:h-8">
       </div>
 
-      <div class="flex flex-col  justify-center items-center w-full">
+      <!-- Sous-titre -->
+      <div class="text-center max-w-3xl mx-auto mb-2 px-4">
+        <p class="text-white/90 text-sm sm:text-base md:text-lg font-light">
+          Choisissez le plan qui correspond le mieux à vos besoins. Tous nos plans incluent 
+          <span class="font-semibold text-yellow-300">14 jours d'essai gratuit</span> sans engagement.
+        </p>
+      </div>
 
-        <div class="w-full h-full flex  justify-center items-center  flex-col md:flex-row gap-8 ">
-
-          <!-- <Paiement v-for="(plan, index) in planDb" :key="index" :plan="plan" /> -->
-          <Paiement v-for="(plan, index) in planDb" :key="index" :plan="plan" />
-        </div>
-
-        <div class="w-full h-[150px] flex justify-between">
-
-          <div class="flex justify-start hover:scale-105 w-[100px] h-[100px] ">
-            <img src="./../assets/image/carre .png" alt="">
+      <!-- Grille des cartes de tarification -->
+      <div class="w-full flex justify-center items-start">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 w-full max-w-7xl">
+          <div v-for="(plan, index) in planDb" :key="index" class="flex justify-center items-start">
+            <Paiement :plan="plan" />
           </div>
-
-
         </div>
-
       </div>
+
+      <!-- Section décorative -->
+      <div class="w-full h-[40px] sm:h-[50px] flex justify-between items-end mt-2">
+        <div class="flex justify-start hover:scale-105 transition-transform duration-300 w-[50px] sm:w-[60px] h-[50px] sm:h-[60px]">
+          <img src="./../assets/image/carre .png" alt="" class="w-full h-full object-contain">
+        </div>
+      </div>
+
     </div>
-
-
 
   </section>
   <personne />
@@ -657,11 +663,9 @@
 
         <!-- Lien -->
         <p class="text-center text-blue-600 font-medium mt-6">
-          <RouterLink to="/connexion" class="hover:underline inline-flex items-center gap-1">
+          <a href="https://demo.sgstocks.com/login?demo=true" target="_blank" class="hover:underline inline-flex items-center gap-1">
             Cliquez pour Suivre le lien pour la phase test 👍👌
-            >
-          </RouterLink>
-
+          </a>
         </p>
       </form>
     </section>
@@ -893,12 +897,12 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onBeforeUnmount, onUnmounted, computed } from 'vue'
-import Paiement from './../components/paiementessaie.vue'
+import { ref, onMounted, onBeforeUnmount, onUnmounted, computed } from 'vue';
+import Paiement from './../components/paiementessaie.vue';
 import personne from '@/components/personne.vue';
 import { reactive } from 'vue';
-import { RouterLink } from 'vue-router'
-import { Carousel3d, Slide } from 'vue3-carousel-3d'
+import { RouterLink } from 'vue-router';
+import { Carousel3d, Slide } from 'vue3-carousel-3d';
 
 // import ChatbotSGStock from '@/components/ChatbotSGStock.vue'
 // import ChatbotSGStock1 from '@/components/ChatbotSGStock1.vue'
@@ -921,6 +925,7 @@ const demoUrl = computed(() => {
 const mobileMenuOpen = ref(false)
 const userMenuOpen = ref(false)
 const userMenuRef = ref(null) // ⚠️ AJOUTÉ : manquait dans votre code
+const carousel = ref(null) // Pour le carousel ref
 
 // Toggle du menu utilisateur
 const toggleUserMenu = () => {
@@ -943,10 +948,12 @@ const showMoreFeatures = ref(false);
 
 const planDb = ref([
   {
+    'pack_id': 1,  // Pack 1 - Starter
     'classe': 'PACK 1',
-    // "economie": "4 550",
-    // "pi": "240 000",
+    'plan_backend': 'starter',  // Nom du plan dans le backend
     "pf": "229 900",
+    "price": 229900,  // Prix numérique
+    "renewal_price": 100000,
     "text1": "Réduction de 43,67 % après votre première recharge annuelle, \n soit 100 000 FCFA à payer à partir de la deuxième année.",
     features: [
      
@@ -954,26 +961,24 @@ const planDb = ref([
        "Pour 10 utilisateurs",
                "15 Giga d'espace de stockage",
        'Suivre les ventes et les dépenses',
-      // 'Envoyez un nombre illimité de factures',
-      // 'Pour 15 point de vente maxi',
       ' Gestions des Stocks, des produits et des services',
       'Encaissement, decaissement',
       'Approvisionnement bancaire',
       'Gestion des emprunts',
       'Gestion des fournisseurs et clients',
       'Gestion des depenses',
-      // 'Mouvement stocks',
       'Suivre vos statistiques',
-      // 'Réglement dette fournisseurs et clients',
       'Alerte des ruptures de stocks',
       "Paramétrage et configuration du système + formation des utilisateurs à partir de 250 000 FCFA"
    ],
   },
   {
+    'pack_id': 2,  // Pack 2 - Business
     'classe': 'Pack2',
-    // "economie": "10 000",
-    // "pi": "449,000",
+    'plan_backend': 'business',
     "pf": "449 000",
+    "price": 449900,
+    "renewal_price": 150000,
     "text1": "Réduction de 33.41 % après votre première recharge annuelle, \n soit 150 000 FCFA à payer à partir de la deuxième année.",
 
     features: [
@@ -983,29 +988,26 @@ const planDb = ref([
             "30 Giga d'espace de stockage", 
                "Pour 15 utilisateurs",
      'Suivre les ventes et les dépenses',
-      // 'Envoyez un nombre illimité de factures',
-      // 'Pour 15 point de vente maxi',
       ' Gestions des Stocks, des produits et des services',
       'Encaissement, decaissement',
       'Approvisionnement bancaire',
       'Gestion des emprunts',
       'Gestion des fournisseurs et clients',
       'Gestion des depenses',
-      // 'Mouvement stocks',
       'Suivre vos statistiques',
-      // 'Réglement dette fournisseurs et clients',
       'Alerte des ruptures de stocks',
       "Paramétrage et configuration du système + formation des utilisateurs à partir de 250 000 FCFA"
 
     ],
     comingSoon: [ '1 Point de vente + 1 Magasin',   "30 Giga d'espace de stockage",  ],
   },
-  // Packs
   {
+    'pack_id': 3,  // Pack 3 - Enterprise
     'classe': ' PACK 3',
-    // "economie": " 000",
-    // "pi": "80,000",
+    'plan_backend': 'enterprise',
     "pf": "699 900",
+    "price": 699900,
+    "renewal_price": 250000,
     "text1": "Réduction de 35.7 % après votre première recharge annuelle, \n soit 250 000 FCFA à payer à partir de la deuxième année.",
 
     features: [
@@ -1014,17 +1016,13 @@ const planDb = ref([
       
       "50 Giga d'espace de stockage", 
       'Suivre les ventes et les dépenses',
-      // 'Envoyez un nombre illimité de factures',
-      // 'Pour 15 point de vente maxi',
       ' Gestions des Stocks, des produits et des services',
       'Encaissement, decaissement',
       'Approvisionnement bancaire',
       'Gestion des emprunts',
       'Gestion des fournisseurs et clients',
       'Gestion des depenses',
-      // 'Mouvement stocks',
       'Suivre vos statistiques',
-      // 'Réglement dette fournisseurs et clients',
       'Alerte des ruptures de stocks',
       "Paramétrage et configuration du système + formation des utilisateurs à partir de 250 000 FCFA"
 
@@ -1084,6 +1082,14 @@ const handleLogout = () => {
   console.log('Déconnexion réussie')
   mobileMenuOpen.value = false
   userMenuOpen.value = false
+}
+
+// Scroll vers la section contact
+const scrollToContact = () => {
+  const contactSection = document.getElementById('contact')
+  if (contactSection) {
+    contactSection.scrollIntoView({ behavior: 'smooth', block: 'start' })
+  }
 }
 
 
@@ -1163,6 +1169,7 @@ const typedText = ref('')
 const fullText = " vos charges, vos    produits, et votre bénéfice"
 let typingInterval = null
 let restartTimeout = null
+let autoplayLoop = null  // Pour le carousel autoplay
 
 // Fonction pour animer le texte lettre par lettre EN BOUCLE
 function animateTyping() {
