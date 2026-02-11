@@ -331,7 +331,7 @@ const countdown = ref(10)
 let redirectTimer = null
 let countdownInterval = null
 
-const API_URL = 'http://localhost:8000/api/v1/auth'
+const API_URL = 'http://api.sg-stocks.com/api/v1/auth'
 
 // Charger les données des étapes précédentes
 onMounted(() => {

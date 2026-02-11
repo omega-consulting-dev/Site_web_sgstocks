@@ -1224,7 +1224,7 @@ async function submitForm() {
   formSuccess.value = false
 
   try {
-    const response = await fetch('http://localhost:8000/api/v1/auth/contact-messages/', {
+    const response = await fetch('http://api.sg-stocks.com/api/v1/auth/contact-messages/', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

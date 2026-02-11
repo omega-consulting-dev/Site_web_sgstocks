@@ -56,7 +56,7 @@ const formData = ref({
 
 const checking = ref(false)
 const errorMessage = ref('')
-const API_URL = 'http://localhost:8000/api/v1/auth'
+const API_URL = 'http://api.sg-stocks.com/api/v1/auth'
 
 const handleConnexionCompte = async () => {
     if (!formData.value.email) {
