@@ -162,12 +162,8 @@ const props = defineProps({
     }
 })
 
-// ===== FONCTION DÉSACTIVÉE - En attente de l'intégration du paiement =====
-// Pour réactiver:
-// 1. Décommenter cette fonction
-// 2. Ajouter @click="handleTrialClick" sur le bouton ci-dessus (ligne ~133)
-// ==========================================================================
-/*
+// Fonction prête à être utilisée - actuellement désactivée sur le bouton
+// Pour activer: ajouter @click="handleTrialClick" sur le bouton (voir ligne ~133)
 const handleTrialClick = () => {
     const packData = {
         pack_id: props.plan.pack_id || 1,
@@ -181,7 +177,6 @@ const handleTrialClick = () => {
     localStorage.setItem('selected_pack', JSON.stringify(packData))
     router.push('/connexion')
 }
-*/
 
 const showMore = ref(false)
 const mobileFeatureLimit = 4
