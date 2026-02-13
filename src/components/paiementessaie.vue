@@ -126,16 +126,17 @@
                 </svg>
             </button>
 
-            <!-- Bouton amélioré - TEMPORAIREMENT DÉSACTIVÉ -->
+            <!-- Bouton amélioré -->
             <div class="flex flex-col items-center gap-3 mt-6">
-                <!-- DÉSACTIVÉ: En attente de l'intégration du paiement -->
-                <button disabled class="w-full bg-gray-400 text-gray-700 rounded-xl py-4 px-6
-                             text-sm sm:text-base font-bold shadow-lg cursor-not-allowed opacity-60
+                <!-- Bouton désactivé temporairement - aucune action au clic -->
+                <button class="w-full bg-gradient-to-r from-yellow-400 to-yellow-500 text-gray-900 rounded-xl py-4 px-6
+                             text-sm sm:text-base font-bold shadow-lg
+                             hover:from-yellow-500 hover:to-yellow-600 hover:shadow-xl hover:scale-105
                              transition-all duration-300">
-                    🔒 Bientôt disponible
+                    ✨ Essai gratuit pendant 14 jours
                 </button>
                 <p class="text-center text-[11px] text-gray-500 transition-colors duration-300 group-hover:text-gray-300">
-                    En attente de l'intégration du paiement
+                    Carte de crédit requise
                 </p>
             </div>
 
