@@ -128,13 +128,16 @@
 
             <!-- Bouton amélioré -->
             <div class="flex flex-col items-center gap-3 mt-6">
-                <!-- Bouton désactivé temporairement - aucune action au clic -->
-                <button class="w-full bg-gradient-to-r from-yellow-400 to-yellow-500 text-gray-900 rounded-xl py-4 px-6
+                <!-- TEMPORAIRE: @click désactivé en attendant l'intégration du paiement -->
+                <!-- Pour réactiver: remplacer la ligne suivante par: <button @click="handleTrialClick" -->
+                <button 
+                    class="w-full bg-gradient-to-r from-yellow-400 to-yellow-500 text-gray-900 rounded-xl py-4 px-6
                              text-sm sm:text-base font-bold shadow-lg
                              hover:from-yellow-500 hover:to-yellow-600 hover:shadow-xl hover:scale-105
                              transition-all duration-300">
                     ✨ Essai gratuit pendant 14 jours
                 </button>
+                <!-- Ligne d'origine commentée: <button @click="handleTrialClick" class="w-full..."> -->
                 <p class="text-center text-[11px] text-gray-500 transition-colors duration-300 group-hover:text-gray-300">
                     Carte de crédit requise
                 </p>
@@ -159,7 +162,11 @@ const props = defineProps({
     }
 })
 
-// FONCTION DÉSACTIVÉE TEMPORAIREMENT - En attente de l'intégration du paiement
+// ===== FONCTION DÉSACTIVÉE - En attente de l'intégration du paiement =====
+// Pour réactiver:
+// 1. Décommenter cette fonction
+// 2. Ajouter @click="handleTrialClick" sur le bouton ci-dessus (ligne ~133)
+// ==========================================================================
 /*
 const handleTrialClick = () => {
     const packData = {
