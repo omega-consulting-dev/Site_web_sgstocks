@@ -126,16 +126,16 @@
                 </svg>
             </button>
 
-            <!-- Bouton amélioré -->
+            <!-- Bouton amélioré - TEMPORAIREMENT DÉSACTIVÉ -->
             <div class="flex flex-col items-center gap-3 mt-6">
-                <button @click="handleTrialClick" class="w-full bg-gradient-to-r from-yellow-400 to-yellow-500 text-gray-900 rounded-xl py-4 px-6
-                             text-sm sm:text-base font-bold shadow-lg
-                             hover:from-yellow-500 hover:to-yellow-600 hover:shadow-xl hover:scale-105
+                <!-- DÉSACTIVÉ: En attente de l'intégration du paiement -->
+                <button disabled class="w-full bg-gray-400 text-gray-700 rounded-xl py-4 px-6
+                             text-sm sm:text-base font-bold shadow-lg cursor-not-allowed opacity-60
                              transition-all duration-300">
-                    ✨ Essai gratuit pendant 14 jours
+                    🔒 Bientôt disponible
                 </button>
                 <p class="text-center text-[11px] text-gray-500 transition-colors duration-300 group-hover:text-gray-300">
-                    Carte de crédit requise
+                    En attente de l'intégration du paiement
                 </p>
             </div>
 
@@ -158,6 +158,8 @@ const props = defineProps({
     }
 })
 
+// FONCTION DÉSACTIVÉE TEMPORAIREMENT - En attente de l'intégration du paiement
+/*
 const handleTrialClick = () => {
     const packData = {
         pack_id: props.plan.pack_id || 1,
@@ -171,6 +173,7 @@ const handleTrialClick = () => {
     localStorage.setItem('selected_pack', JSON.stringify(packData))
     router.push('/connexion')
 }
+*/
 
 const showMore = ref(false)
 const mobileFeatureLimit = 4
